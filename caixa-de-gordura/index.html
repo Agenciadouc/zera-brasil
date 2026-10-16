@@ -3,25 +3,657 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Em construção — Caixa de gordura · Zera Brasil</title>
+<meta name="description" content="ZERA Caixa de Gordura — solução química pra tratamento de gordura acumulada em caixas de gordura residenciais, comerciais e condominiais. Aplicação simples, resultado em minutos.">
+<title>ZERA Caixa de Gordura — Problemas com caixa de gordura entupida?</title>
 <style>
-  :root { --azul:#0068B4; --verde:#2BA84A; --ink:#1A2332; --bg:#F6F8FB; --muted:#5A6478; }
+  :root{
+    --navy:#0A2540;
+    --navy-2:#0E2D4D;
+    --azul:#0068B4;
+    --azul-2:#0056a0;
+    --azul-soft:#E8F2FB;
+    --amarelo:#FFB800;
+    --amarelo-2:#F5AC00;
+    --verde:#2BA84A;
+    --verde-dark:#1F8138;
+    --ink:#0F1A2A;
+    --ink-2:#1A2332;
+    --muted:#5A6478;
+    --muted-2:#8891A3;
+    --bg:#F6F8FB;
+    --bg-2:#EFF3F8;
+    --line:#E3E8EF;
+    --white:#ffffff;
+    --radius:12px;
+    --radius-lg:16px;
+    --shadow-sm:0 2px 8px rgba(10,37,64,.06);
+    --shadow:0 10px 32px rgba(10,37,64,.08);
+    --shadow-dark:0 20px 50px rgba(0,0,0,.35);
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-  .card{background:#fff;padding:48px 40px;border-radius:12px;max-width:480px;text-align:center;box-shadow:0 10px 40px rgba(20,30,50,0.08)}
-  .dot{width:10px;height:10px;background:var(--verde);border-radius:50%;display:inline-block;margin-right:8px;animation:pulse 1.5s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-  h1{font-size:24px;margin-bottom:12px;color:var(--azul)}
-  p{color:var(--muted);line-height:1.6;font-size:15px}
-  .tag{display:inline-flex;align-items:center;background:#F0F7FF;color:var(--azul);font-size:12px;font-weight:600;padding:6px 12px;border-radius:20px;margin-bottom:20px}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(10,37,64,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-wrap{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{display:flex;align-items:center;gap:8px;color:#fff;font-weight:900;font-size:24px;letter-spacing:1px}
+  .logo svg{width:28px;height:28px}
+  .nav-menu{display:flex;align-items:center;gap:28px;color:rgba(255,255,255,.85);font-size:14px;font-weight:500}
+  .nav-menu a{transition:color .2s}
+  .nav-menu a:hover{color:#fff}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--amarelo);color:var(--ink);padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;transition:background .2s}
+  .nav-cta:hover{background:var(--amarelo-2)}
+  .nav-cta svg{width:16px;height:16px}
+  .nav-burger{display:none;color:#fff}
+
+  /* ============ HERO ============ */
+  .hero{background:linear-gradient(135deg,#0A2540 0%,#0E2D4D 60%,#113155 100%);color:#fff;overflow:hidden;position:relative}
+  .hero-wrap{max-width:1200px;margin:0 auto;padding:72px 24px 88px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:#7AB8E8;margin-bottom:20px;text-transform:uppercase}
+  .hero h1{font-size:52px;line-height:1.08;font-weight:800;letter-spacing:-1.5px;margin-bottom:20px;text-wrap:balance}
+  .hero h1 .accent{color:var(--amarelo)}
+  .hero-sub{font-size:17px;line-height:1.6;color:rgba(255,255,255,.85);max-width:560px;margin-bottom:28px}
+  .hero-feats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+  .feat{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.9)}
+  .feat-ico{width:36px;height:36px;background:rgba(0,104,180,.25);border-radius:8px;display:grid;place-items:center;color:#7AB8E8;flex-shrink:0}
+  .feat-ico svg{width:18px;height:18px}
+  .feat strong{display:block;font-weight:600;color:#fff;line-height:1.2}
+  .hero-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--amarelo);color:var(--ink);padding:16px 28px;border-radius:10px;font-weight:700;font-size:15px;transition:all .2s;box-shadow:0 10px 24px rgba(255,184,0,.25)}
+  .btn-primary:hover{background:var(--amarelo-2);transform:translateY(-1px)}
+  .btn-primary svg{width:18px;height:18px}
+  .hero-price{font-size:13px;color:rgba(255,255,255,.75)}
+  .hero-price strong{display:block;font-size:22px;font-weight:800;color:#fff;margin-top:2px}
+  .hero-img{position:relative;height:460px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#3b5f30 0%,#2a4322 100%);box-shadow:var(--shadow-dark)}
+  .hero-img::before{content:'';position:absolute;inset:0;background:
+    radial-gradient(circle at 70% 60%, rgba(140,170,120,.25), transparent 50%),
+    radial-gradient(circle at 30% 20%, rgba(80,100,60,.4), transparent 60%);
+  }
+  .hero-img-label{position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,.6);color:#fff;padding:6px 12px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:.5px}
+  /* mockup aplicação */
+  .hero-mock{position:absolute;top:50%;right:12%;transform:translateY(-50%) rotate(-20deg);width:120px;height:280px;background:linear-gradient(180deg,#fff 0%,#E8F2FB 100%);border-radius:14px 14px 20px 20px;box-shadow:0 20px 40px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;padding:16px 10px;z-index:2}
+  .hero-mock-cap{width:60%;height:26px;background:#002b55;border-radius:4px;margin-bottom:12px}
+  .hero-mock-label{width:90%;height:70%;background:linear-gradient(180deg,var(--azul) 0%,#004a8f 100%);border-radius:6px;color:#fff;font-size:9px;font-weight:800;text-align:center;padding:10px 4px;letter-spacing:.5px;line-height:1.2;display:flex;flex-direction:column;justify-content:space-between}
+  .hero-mock-label span{display:block}
+  .hero-mock-label .big{font-size:16px;margin:14px 0 6px}
+  .hero-pour{position:absolute;top:48%;right:30%;width:40px;height:120px;background:linear-gradient(180deg,rgba(220,240,255,.9) 0%,rgba(180,220,255,.5) 100%);border-radius:40%;transform:rotate(20deg);z-index:1;filter:blur(2px)}
+
+  /* ============ SECTIONS ============ */
+  section{padding:88px 24px}
+  .wrap{max-width:1200px;margin:0 auto}
+  .sec-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--azul);text-transform:uppercase;margin-bottom:14px}
+  .sec-title{font-size:40px;line-height:1.1;font-weight:800;letter-spacing:-1px;color:var(--ink);margin-bottom:12px;text-wrap:balance}
+  .sec-sub{font-size:17px;line-height:1.6;color:var(--muted);max-width:720px;margin:0 auto}
+  .sec-center{text-align:center;margin-bottom:48px}
+
+  /* ============ VIDEOS ============ */
+  .videos{background:#fff}
+  .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .video-card{position:relative;aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:transform .3s;box-shadow:var(--shadow)}
+  .video-card:hover{transform:translateY(-4px)}
+  .video-card:nth-child(1){background:linear-gradient(135deg,#8b6a3e 0%,#6b4e2a 100%)}
+  .video-card:nth-child(2){background:linear-gradient(135deg,#5a7850 0%,#3d5438 100%)}
+  .video-card:nth-child(3){background:linear-gradient(135deg,#5a8aa0 0%,#3a6a80 100%)}
+  .video-card::before{content:'';position:absolute;inset:0;background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,.12), transparent 60%);
+  }
+  .video-play{position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:var(--amarelo);border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.4);transition:all .2s;z-index:2}
+  .video-card:hover .video-play{transform:translate(-50%,-50%) scale(1.1);background:var(--amarelo-2)}
+  .video-play svg{width:22px;height:22px;color:var(--ink);margin-left:3px}
+  .video-info{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.6) 70%,transparent);padding:24px 20px 20px;color:#fff;z-index:2}
+  .video-info h3{font-size:17px;font-weight:700;margin-bottom:4px;letter-spacing:-.3px}
+  .video-info p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.4}
+
+  /* ============ BENEFITS ============ */
+  .benefits{background:var(--bg);padding:56px 24px}
+  .bene-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .bene{display:flex;align-items:flex-start;gap:14px;padding:12px}
+  .bene-ico{width:44px;height:44px;background:var(--azul-soft);border-radius:10px;display:grid;place-items:center;color:var(--azul);flex-shrink:0}
+  .bene-ico svg{width:22px;height:22px}
+  .bene h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.3}
+  .bene p{font-size:13px;color:var(--muted);line-height:1.5}
+
+  /* ============ ANTES DEPOIS ============ */
+  .before-after{background:#fff}
+  .ba-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+  .ba-images{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ba-img{aspect-ratio:1/1;border-radius:12px;overflow:hidden;position:relative}
+  .ba-img.antes{background:linear-gradient(135deg,#a08858 0%,#7a6540 100%)}
+  .ba-img.depois{background:linear-gradient(135deg,#4a7098 0%,#2d5078 100%)}
+  .ba-img::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 30%, rgba(255,255,255,.15), transparent 70%)}
+  .ba-tag{position:absolute;left:16px;bottom:16px;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:800;letter-spacing:1px;color:#fff;z-index:2}
+  .ba-tag.antes{background:rgba(30,40,50,.9)}
+  .ba-tag.depois{background:var(--verde)}
+  .ba-caps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+  .ba-caps p{font-size:13px;color:var(--muted);line-height:1.4}
+  .ba-text .sec-eyebrow{color:var(--azul);margin-bottom:14px;display:block}
+  .ba-text h2{font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.8px;color:var(--ink);margin-bottom:18px}
+  .ba-text p{color:var(--muted);line-height:1.6;margin-bottom:24px}
+  .ba-badge{display:inline-flex;align-items:center;gap:10px;background:var(--azul-soft);color:var(--azul);padding:12px 18px;border-radius:10px;font-size:14px;font-weight:600}
+  .ba-badge svg{width:18px;height:18px}
+
+  /* ============ COMO USAR ============ */
+  .steps{background:#fff;padding-top:40px}
+  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+  .step{position:relative}
+  .step-img{aspect-ratio:16/10;border-radius:12px;background:linear-gradient(135deg,#5a7898 0%,#3d5a7a 100%);margin-bottom:18px;position:relative;overflow:hidden}
+  .step:nth-child(1) .step-img{background:linear-gradient(135deg,#3a5a7a 0%,#1f3a5a 100%)}
+  .step:nth-child(2) .step-img{background:linear-gradient(135deg,#6a8098 0%,#4a607a 100%)}
+  .step:nth-child(3) .step-img{background:linear-gradient(135deg,#8a6540 0%,#6a4830 100%)}
+  .step-img::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.12), transparent 60%)}
+  .step-num{width:36px;height:36px;background:var(--azul);color:#fff;border-radius:50%;display:inline-grid;place-items:center;font-weight:800;font-size:16px;margin-bottom:12px}
+  .step h3{font-size:20px;font-weight:800;color:var(--azul);margin-bottom:6px;letter-spacing:-.3px}
+  .step p{font-size:14px;color:var(--muted);line-height:1.5}
+
+  /* ============ PRODUTOS ============ */
+  .produtos{background:var(--bg)}
+  .prod-wrap{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:center}
+  .prod-text .sec-eyebrow{color:var(--azul)}
+  .prod-text h2{font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.8px;color:var(--ink);margin-bottom:14px}
+  .prod-text p{color:var(--muted);line-height:1.6}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .prod{background:#fff;border-radius:14px;padding:28px 20px 24px;text-align:center;box-shadow:var(--shadow-sm);transition:all .2s;border:1px solid var(--line)}
+  .prod:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .prod-img{height:140px;display:grid;place-items:center;margin-bottom:14px}
+  .prod-bottle{width:60px;height:120px;background:linear-gradient(180deg,#fff 0%,#E8F2FB 100%);border-radius:8px 8px 12px 12px;position:relative;display:flex;flex-direction:column;align-items:center;padding:8px 4px;box-shadow:0 6px 16px rgba(10,37,64,.1)}
+  .prod-bottle::before{content:'';position:absolute;top:-6px;width:40%;height:14px;background:#002b55;border-radius:3px}
+  .prod-bottle-label{margin-top:12px;width:85%;height:70%;background:linear-gradient(180deg,var(--azul) 0%,#004a8f 100%);border-radius:4px;color:#fff;font-size:7px;font-weight:800;text-align:center;padding:6px 2px;letter-spacing:.3px}
+  .prod-bottle-label .big{font-size:11px;display:block;margin:4px 0}
+  .prod-med .prod-bottle{width:80px;height:140px}
+  .prod-med .prod-bottle-label .big{font-size:13px}
+  .prod-big .prod-bottle{width:100px;height:150px;background:linear-gradient(180deg,#E8F2FB 0%,#C8D8E8 100%)}
+  .prod-big .prod-bottle::before{width:30%}
+  .prod-big .prod-bottle-label .big{font-size:14px}
+  .prod h4{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+  .prod .prod-desc{font-size:12px;color:var(--muted);line-height:1.4;margin-bottom:12px;min-height:34px}
+  .prod .prod-price{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px}
+  .btn-sm{display:inline-block;width:100%;background:var(--amarelo);color:var(--ink);padding:10px 16px;border-radius:8px;font-weight:700;font-size:13px;text-align:center;transition:background .2s}
+  .btn-sm:hover{background:var(--amarelo-2)}
+
+  /* ============ INDICADO ============ */
+  .indicado{background:#fff}
+  .ind-wrap{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+  .ind-text .sec-eyebrow{color:var(--azul)}
+  .ind-text h2{font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.8px;color:var(--ink);margin-bottom:14px}
+  .ind-text p{color:var(--muted);line-height:1.6}
+  .ind-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ind-card{background:var(--bg);border-radius:12px;overflow:hidden;transition:transform .2s}
+  .ind-card:hover{transform:translateY(-3px)}
+  .ind-img{aspect-ratio:4/3;background:linear-gradient(135deg,#8b7f6a 0%,#6b5f4a 100%)}
+  .ind-card:nth-child(2) .ind-img{background:linear-gradient(135deg,#aa8a5a 0%,#886838 100%)}
+  .ind-card:nth-child(3) .ind-img{background:linear-gradient(135deg,#6a8098 0%,#4a607a 100%)}
+  .ind-body{padding:18px 16px}
+  .ind-body .ico{display:inline-grid;place-items:center;width:28px;height:28px;background:var(--azul-soft);color:var(--azul);border-radius:6px;margin-bottom:8px}
+  .ind-body .ico svg{width:16px;height:16px}
+  .ind-body h4{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:4px}
+  .ind-body p{font-size:12px;color:var(--muted);line-height:1.5}
+
+  /* ============ QUALIDADE ============ */
+  .quality{background:#fff}
+  .q-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+  .q-img{aspect-ratio:5/4;border-radius:16px;background:linear-gradient(135deg,#1a3550 0%,#0a2540 100%);overflow:hidden;position:relative;box-shadow:var(--shadow)}
+  .q-img::before{content:'';position:absolute;inset:0;background:
+    radial-gradient(circle at 40% 50%, rgba(100,180,255,.3), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(60,110,180,.4), transparent 55%);
+  }
+  .q-beaker{position:absolute;top:35%;left:40%;width:90px;height:120px;background:linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(60,120,200,.6) 100%);border:2px solid rgba(255,255,255,.3);border-radius:4px 4px 20px 20px;z-index:2}
+  .q-beaker::before{content:'';position:absolute;top:60%;left:0;right:0;bottom:0;background:linear-gradient(180deg,#2a6ec8 0%,#1a4a98 100%);border-radius:0 0 18px 18px}
+  .q-glove{position:absolute;top:30%;left:15%;width:120px;height:140px;background:linear-gradient(135deg,#4a90e2 0%,#2a70c2 100%);border-radius:20px 40px 20px 20px;transform:rotate(-15deg);z-index:1}
+  .q-text .sec-eyebrow{color:var(--azul)}
+  .q-text h2{font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.8px;color:var(--ink);margin-bottom:14px}
+  .q-text > p{color:var(--muted);line-height:1.6;margin-bottom:28px}
+  .q-feats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .q-feat{display:flex;flex-direction:column;gap:8px}
+  .q-feat .ico{width:32px;height:32px;background:var(--azul-soft);color:var(--azul);border-radius:8px;display:grid;place-items:center}
+  .q-feat .ico svg{width:16px;height:16px}
+  .q-feat h5{font-size:13px;font-weight:700;color:var(--ink)}
+  .q-feat p{font-size:11px;color:var(--muted);line-height:1.4}
+
+  /* ============ FAQ ============ */
+  .faq{background:var(--bg)}
+  .faq-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
+  .faq-text .sec-eyebrow{color:var(--azul)}
+  .faq-text h2{font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.8px;color:var(--ink);margin-bottom:14px}
+  .faq-text p{color:var(--muted);line-height:1.6}
+  .faq-list{display:flex;flex-direction:column;gap:0}
+  .faq-item{border-bottom:1px solid var(--line);background:#fff}
+  .faq-item:first-child{border-top:1px solid var(--line)}
+  .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;text-align:left;font-size:15px;font-weight:600;color:var(--ink);transition:background .15s}
+  .faq-q:hover{background:#fafbfd}
+  .faq-q .plus{font-size:22px;color:var(--azul);font-weight:400;transition:transform .2s;flex-shrink:0;margin-left:16px}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 24px;color:var(--muted);font-size:14px;line-height:1.6}
+  .faq-item.open .faq-a{max-height:400px;padding:0 24px 20px}
+
+  /* ============ CTA FINAL ============ */
+  .cta-final{background:linear-gradient(135deg,#0A2540 0%,#0E2D4D 100%);color:#fff;padding:72px 24px}
+  .cta-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+  .cta-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:#7AB8E8;margin-bottom:12px;text-transform:uppercase}
+  .cta-final h2{font-size:44px;line-height:1.08;font-weight:800;letter-spacing:-1px;margin-bottom:14px}
+  .cta-final > .cta-wrap > div > p{color:rgba(255,255,255,.8);line-height:1.6;max-width:460px}
+  .cta-right{display:flex;flex-direction:column;align-items:flex-end;gap:28px}
+  .cta-info-row{display:flex;gap:32px;flex-wrap:wrap;justify-content:flex-end}
+  .cta-info{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+  .cta-info .ico{width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:50%;display:grid;place-items:center;color:#7AB8E8}
+  .cta-info .ico svg{width:18px;height:18px}
+  .cta-info p{font-size:11px;color:rgba(255,255,255,.75);line-height:1.3;max-width:100px;font-weight:600}
+
+  /* ============ FOOTER ============ */
+  footer{background:#071a2f;color:rgba(255,255,255,.65);padding:40px 24px 24px;font-size:13px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+  .foot-menu{display:flex;gap:24px;flex-wrap:wrap}
+  .foot-menu a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:11px;color:rgba(255,255,255,.5)}
+  .foot-legal{display:flex;gap:16px}
+
+  /* ============ MOBILE ============ */
+  @media(max-width:960px){
+    .nav-menu{display:none}
+    .nav-burger{display:grid;place-items:center;padding:8px}
+    .hero-wrap{grid-template-columns:1fr;gap:32px;padding:48px 24px 64px}
+    .hero h1{font-size:36px}
+    .hero-img{height:340px}
+    section{padding:56px 20px}
+    .sec-title{font-size:30px}
+    .video-grid{grid-template-columns:1fr;gap:16px}
+    .bene-grid{grid-template-columns:1fr 1fr;gap:18px}
+    .ba-wrap,.prod-wrap,.ind-wrap,.q-wrap,.faq-wrap,.cta-wrap{grid-template-columns:1fr;gap:32px}
+    .steps-grid{grid-template-columns:1fr;gap:24px}
+    .prod-grid{grid-template-columns:1fr;gap:16px}
+    .ind-cards{grid-template-columns:1fr}
+    .q-feats{grid-template-columns:1fr}
+    .cta-right{align-items:flex-start}
+    .cta-info-row{justify-content:flex-start}
+    .cta-final h2,.ba-text h2,.prod-text h2,.ind-text h2,.q-text h2,.faq-text h2{font-size:28px}
+    .foot-wrap{flex-direction:column;align-items:flex-start}
+  }
+  @media(max-width:520px){
+    .hero h1{font-size:30px}
+    .hero-feats{gap:14px}
+    .feat{font-size:12px}
+    .bene-grid{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
-<div class="card">
-  <span class="tag"><span class="dot"></span>Em construção</span>
-  <h1>Caixa de gordura · Zera Brasil</h1>
-  <p>Esta página está sendo preparada. Em breve, soluções químicas para tratamento de caixa de gordura em restaurantes, condomínios e indústrias.</p>
-</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-wrap">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="6" fill="#0068B4"/><path d="M9 11h14l-10 10h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      ZERA
+    </a>
+    <div class="nav-menu">
+      <a href="#produto">Caixa de gordura</a>
+      <a href="#como-usar">Como usar</a>
+      <a href="#indicado">Para sua casa</a>
+      <a href="#indicado">Para seu negócio</a>
+      <a href="#faq">Dúvidas</a>
+    </div>
+    <a href="#produtos" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Comprar agora
+    </a>
+    <button class="nav-burger" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div>
+      <div class="hero-eyebrow">ZERA | CAIXA DE GORDURA</div>
+      <h1>Problemas com sua caixa de gordura <span class="accent">entupida?</span></h1>
+      <p class="hero-sub">Gordura acumulada, mau cheiro e água escoando devagar? Conheça o ZERA Caixa de Gordura e veja como funciona na prática.</p>
+      <div class="hero-feats">
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div><strong>Aplicação</strong>simples</div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><strong>Resultado</strong>em minutos</div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+          <div><strong>Ajuda no</strong>controle de odor</div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#produtos" class="btn-primary">Conhecer o produto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="hero-price">A partir de<strong>R$ 57</strong></div>
+      </div>
+    </div>
+    <div class="hero-img" aria-label="Aplicação do ZERA Caixa de Gordura">
+      <div class="hero-pour"></div>
+      <div class="hero-mock">
+        <div class="hero-mock-cap"></div>
+        <div class="hero-mock-label">
+          <span>ZERA</span>
+          <span class="big">CAIXA DE<br>GORDURA</span>
+          <span>5L</span>
+        </div>
+      </div>
+      <div class="hero-img-label">placeholder — foto real da aplicação</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos" id="produto">
+  <div class="wrap">
+    <div class="sec-center">
+      <div class="sec-eyebrow">VEJA O ZERA EM AÇÃO</div>
+      <h2 class="sec-title">Do problema ao resultado.</h2>
+      <p class="sec-sub">Acompanhe uma aplicação real e veja como o produto atua na gordura acumulada.</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="video-info"><h3>1. Antes da aplicação</h3><p>Caixa de gordura com acúmulo de gordura e mau cheiro.</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="video-info"><h3>2. Aplicação real</h3><p>Veja como o produto é aplicado.</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="video-info"><h3>3. Resultado em minutos</h3><p>Gordura transformada em líquido.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="bene-grid">
+    <div class="bene">
+      <div class="bene-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+      <div><h4>Evita entupimentos</h4><p>Causa mais comuns de problemas na rede.</p></div>
+    </div>
+    <div class="bene">
+      <div class="bene-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-3 6-3 9 0s6 3 9 0"/><path d="M3 6c3-3 6-3 9 0s6 3 9 0"/><path d="M3 18c3-3 6-3 9 0s6 3 9 0"/></svg></div>
+      <div><h4>Reduz o mau cheiro</h4><p>Ambiente mais agradável no dia a dia.</p></div>
+    </div>
+    <div class="bene">
+      <div class="bene-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+      <div><h4>Fácil de aplicar</h4><p>Sem necessidade de equipamentos.</p></div>
+    </div>
+    <div class="bene">
+      <div class="bene-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg></div>
+      <div><h4>Economia</h4><p>Menos manutenções e limpezas frequentes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES / DEPOIS -->
+<section class="before-after">
+  <div class="wrap">
+    <div class="ba-wrap">
+      <div>
+        <div class="ba-images">
+          <div class="ba-img antes"><span class="ba-tag antes">ANTES</span></div>
+          <div class="ba-img depois"><span class="ba-tag depois">DEPOIS</span></div>
+        </div>
+        <div class="ba-caps">
+          <p>Gordura sólida acumulada.</p>
+          <p>Gordura em estado líquido após a aplicação.</p>
+        </div>
+      </div>
+      <div class="ba-text">
+        <div class="sec-eyebrow">RESULTADO QUE VOCÊ VÊ.</div>
+        <h2>Gordura acumulada não precisa ser um problema.</h2>
+        <p>O ZERA Caixa de Gordura atua na gordura acumulada, facilitando o escoamento e ajudando no controle do mau cheiro.</p>
+        <div class="ba-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Em poucos minutos a gordura se transforma em líquido.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO USAR -->
+<section class="steps" id="como-usar">
+  <div class="wrap">
+    <div>
+      <div class="sec-eyebrow">COMO USAR</div>
+      <h2 class="sec-title" style="margin-bottom:8px">Três passos simples.</h2>
+      <p class="sec-sub" style="margin:0">Siga as orientações do rótulo para o melhor resultado.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-img"></div>
+        <div class="step-num">1</div>
+        <h3>Dilua</h3>
+        <p>Misture o ZERA com água na dose indicada no rótulo.</p>
+      </div>
+      <div class="step">
+        <div class="step-img"></div>
+        <div class="step-num">2</div>
+        <h3>Aplique</h3>
+        <p>Despeje a mistura dentro da caixa de gordura.</p>
+      </div>
+      <div class="step">
+        <div class="step-img"></div>
+        <div class="step-num">3</div>
+        <h3>Distribua</h3>
+        <p>Com um cabo de vassoura, distribua bem o produto para encostar em toda a gordura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos" id="produtos">
+  <div class="wrap">
+    <div class="prod-wrap">
+      <div class="prod-text">
+        <div class="sec-eyebrow">LINHA ZERA CAIXA DE GORDURA</div>
+        <h2>Escolha o tamanho ideal para sua necessidade.</h2>
+        <p>Disponível em diferentes tamanhos para uso doméstico e comercial.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="prod">
+          <div class="prod-img">
+            <div class="prod-bottle"><div class="prod-bottle-label"><div>ZERA</div><div class="big">1L</div></div></div>
+          </div>
+          <h4>1 litro</h4>
+          <p class="prod-desc">Uso doméstico e pequenas caixas.</p>
+          <div class="prod-price">R$ 57,90</div>
+          <a href="#" class="btn-sm">Comprar agora</a>
+        </div>
+        <div class="prod prod-med">
+          <div class="prod-img">
+            <div class="prod-bottle"><div class="prod-bottle-label"><div>ZERA</div><div class="big">5L</div></div></div>
+          </div>
+          <h4>5 litros</h4>
+          <p class="prod-desc">Casas maiores, pequenos comércios e condomínios.</p>
+          <div class="prod-price">R$ 179,90</div>
+          <a href="#" class="btn-sm">Comprar agora</a>
+        </div>
+        <div class="prod prod-big">
+          <div class="prod-img">
+            <div class="prod-bottle"><div class="prod-bottle-label"><div>ZERA</div><div class="big">20L</div></div></div>
+          </div>
+          <h4>20 litros</h4>
+          <p class="prod-desc">Restaurantes, hotéis e cozinhas industriais.</p>
+          <div class="prod-price">R$ 589,90</div>
+          <a href="#" class="btn-sm">Comprar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDICADO PARA -->
+<section class="indicado" id="indicado">
+  <div class="wrap">
+    <div class="ind-wrap">
+      <div class="ind-text">
+        <div class="sec-eyebrow">INDICADO PARA DIFERENTES SITUAÇÕES</div>
+        <h2>Para sua casa ou para seu negócio.</h2>
+        <p>O ZERA Caixa de Gordura é indicado para diferentes situações, com opções de embalagens e orientações de uso.</p>
+      </div>
+      <div class="ind-cards">
+        <div class="ind-card">
+          <div class="ind-img"></div>
+          <div class="ind-body">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <h4>Residências</h4>
+            <p>Caixas de gordura em casas e áreas externas.</p>
+          </div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-img"></div>
+          <div class="ind-body">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <h4>Restaurantes e lanchonetes</h4>
+            <p>Cozinhas comerciais e caixas de preparo.</p>
+          </div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-img"></div>
+          <div class="ind-body">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h4>Condomínios</h4>
+            <p>Áreas comuns e caixas maiores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIDADE -->
+<section class="quality">
+  <div class="wrap">
+    <div class="q-wrap">
+      <div class="q-img">
+        <div class="q-glove"></div>
+        <div class="q-beaker"></div>
+      </div>
+      <div class="q-text">
+        <div class="sec-eyebrow">QUALIDADE E SEGURANÇA</div>
+        <h2>ZERA Brasil. Qualidade em cada solução.</h2>
+        <p>Desenvolvemos soluções químicas para o tratamento de água, efluentes e caixas de gordura, com foco em eficiência, praticidade e segurança na aplicação. Nossos produtos seguem padrões de qualidade e os requisitos sanitários aplicáveis da Anvisa.</p>
+        <div class="q-feats">
+          <div class="q-feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h5>Padrões de qualidade</h5>
+            <p>Processos de controle e segurança.</p>
+          </div>
+          <div class="q-feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-4 7a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-4-7V3"/><line x1="7" y1="3" x2="17" y2="3"/></svg></div>
+            <h5>Produtos especializados</h5>
+            <p>Soluções para diferentes aplicações.</p>
+          </div>
+          <div class="q-feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div>
+            <h5>Suporte técnico</h5>
+            <p>Oriente-se para uso correto e melhores resultados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <div class="faq-text">
+        <div class="sec-eyebrow">DÚVIDAS</div>
+        <h2>Perguntas frequentes.</h2>
+        <p>Tire as principais dúvidas sobre o uso do ZERA Caixa de Gordura.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q">Funciona na minha caixa de gordura?<span class="plus">+</span></button><div class="faq-a">O ZERA Caixa de Gordura é voltado ao tratamento de gordura acumulada. A indicação e a dosagem dependem das características da caixa e das condições de uso. Nossa equipe pode orientar você.</div></div>
+        <div class="faq-item"><button class="faq-q">Preciso mesmo mexer?<span class="plus">+</span></button><div class="faq-a">A forma de aplicação deve seguir as instruções do rótulo. O contato adequado do produto com a gordura é importante para o tratamento.</div></div>
+        <div class="faq-item"><button class="faq-q">É seguro para a tubulação?<span class="plus">+</span></button><div class="faq-a">Utilize o produto somente nas condições de uso indicadas pelo fabricante. Em caso de dúvidas sobre os materiais da instalação, consulte a equipe técnica.</div></div>
+        <div class="faq-item"><button class="faq-q">Quanto tempo dura o resultado?<span class="plus">+</span></button><div class="faq-a">Depende do volume de gordura gerado, da frequência de utilização da instalação e das condições da caixa de gordura.</div></div>
+        <div class="faq-item"><button class="faq-q">Serve para restaurante e condomínio?<span class="plus">+</span></button><div class="faq-a">A linha contempla diferentes tamanhos de embalagem e aplicações. Consulte a equipe para verificar a indicação adequada ao seu estabelecimento.</div></div>
+        <div class="faq-item"><button class="faq-q">Como saber a quantidade ideal?<span class="plus">+</span></button><div class="faq-a">Informe o tipo de instalação, as dimensões aproximadas da caixa e a situação atual. A equipe ZERA poderá orientar a quantidade recomendada.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="cta-wrap">
+      <div>
+        <div class="cta-eyebrow">ZERA | CAIXA DE GORDURA</div>
+        <h2>Resolva hoje.</h2>
+        <p>Escolha o tamanho ideal, compre de forma simples e receba em todo o Brasil.</p>
+      </div>
+      <div class="cta-right">
+        <a href="#produtos" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Comprar agora
+        </a>
+        <div class="cta-info-row">
+          <div class="cta-info">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+            <p>Entrega para todo o Brasil</p>
+          </div>
+          <div class="cta-info">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+            <p>Pagamento seguro</p>
+          </div>
+          <div class="cta-info">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div>
+            <p>Atendimento especializado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-wrap">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="6" fill="#0068B4"/><path d="M9 11h14l-10 10h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      ZERA
+    </a>
+    <div class="foot-menu">
+      <a href="#produto">Caixa de gordura</a>
+      <a href="#como-usar">Como usar</a>
+      <a href="#indicado">Para sua casa</a>
+      <a href="#indicado">Para seu negócio</a>
+      <a href="#faq">Dúvidas</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>Não ingerir. Mantenha fora do alcance de crianças e animais.</div>
+    <div class="foot-legal">
+      <a href="#">Política de privacidade</a>
+      <a href="#">Termos de uso</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
 </body>
 </html>
