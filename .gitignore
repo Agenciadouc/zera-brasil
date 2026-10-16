@@ -1,0 +1,17 @@
+# Node (caso a gente adicione build no futuro)
+node_modules/
+.env
+.env.local
+*.log
+
+# Editores
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Backups locais
+*.bak
+*.old
+*.tmp

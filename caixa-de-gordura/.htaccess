@@ -1,0 +1,26 @@
+# Desliga Passenger (Node) nessa pasta
+# Site principal (zerabrasil.com.br) continua rodando a app Node em /hbuilds/current/nodejs
+# Aqui servimos HTML estatico direto pelo Apache
+PassengerEnabled off
+
+DirectoryIndex index.html
+
+AddType text/html .html
+AddType text/css .css
+AddType application/javascript .js
+AddType image/webp .webp
+AddType image/svg+xml .svg
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 90 days"
+  ExpiresByType image/jpeg "access plus 90 days"
+  ExpiresByType image/png  "access plus 90 days"
+  ExpiresByType image/svg+xml "access plus 90 days"
+  ExpiresByType text/css   "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
