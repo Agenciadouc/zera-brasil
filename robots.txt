@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /obrigado-sim/
+Disallow: /obrigado-nao/
+
+Sitemap: https://zerabrasil.com.br/sitemap.xml
