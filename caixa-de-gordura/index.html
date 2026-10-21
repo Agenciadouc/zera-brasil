@@ -493,6 +493,43 @@
     }
     .pack__cta:hover { background: var(--zera-yellow-deep); transform: translateY(-1px); }
 
+    /* Selo "Compre com seguranca no Mercado Livre" */
+    .ml-trust {
+      margin-top: 32px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px;
+      padding: 14px 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      max-width: fit-content;
+      margin-left: auto; margin-right: auto;
+      box-shadow: 0 4px 14px rgba(11,18,33,0.05);
+    }
+    .ml-trust__shield {
+      width: 32px; height: 32px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, #19A34A 0%, #0F8A3A 100%);
+      border-radius: 50%;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .ml-trust__shield svg { width: 16px; height: 16px; }
+    .ml-trust__text {
+      display: flex; flex-direction: column; line-height: 1.2;
+    }
+    .ml-trust__text small {
+      font-size: 11px; font-weight: 600;
+      color: var(--ink-500);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .ml-trust__text strong {
+      font-size: 14.5px; font-weight: 700;
+      color: var(--ink-900);
+    }
+    .ml-trust__text strong .ml-yellow { color: #FFE600; background: #2D3277; padding: 1px 6px 2px; border-radius: 4px; font-size: 12.5px; letter-spacing: -0.3px; margin-left: 4px; display: inline-block; vertical-align: 1px; }
+
     /* ───── SITUACOES (casa/restaurante/condominio) ───── */
     .situacoes { background: var(--bg-soft); padding: 88px 0; }
     .situacoes__layout {
@@ -1116,6 +1153,19 @@
             <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');">Comprar agora</a>
           </div>
         </div>
+
+        <div class="ml-trust">
+          <div class="ml-trust__shield" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6l9-4z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <div class="ml-trust__text">
+            <small>Compre com segurança</small>
+            <strong>Vendido pelo <span class="ml-yellow">Mercado Livre</span></strong>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1305,10 +1355,10 @@
             </div>
             <div class="cta-badge">
               <svg class="cta-badge__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="1" y="4" width="22" height="16" rx="2"/>
-                <line x1="1" y1="10" x2="23" y2="10"/>
+                <path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6l9-4z"/>
+                <polyline points="9 12 11 14 15 10"/>
               </svg>
-              Pagamento<br />seguro
+              Compra via<br />Mercado Livre
             </div>
             <div class="cta-badge">
               <svg class="cta-badge__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
