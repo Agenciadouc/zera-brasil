@@ -1092,44 +1092,64 @@
     }
     .form-card button:hover { background: var(--zera-yellow-deep); }
 
-    /* ───── FOOTER (branco) ───── */
+    /* ───── FOOTER (branco, 3 colunas) ───── */
     .footer {
       background: #fff;
       color: var(--ink-500);
-      padding: 32px 0;
-      font-size: 13px;
+      padding: 56px 0 24px;
+      font-size: 13.5px;
       border-top: 1px solid var(--line);
+      line-height: 1.55;
     }
-    .footer__inner {
+    .footer__grid {
       display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 32px;
-      align-items: center;
+      grid-template-columns: 2fr 1fr 1.3fr;
+      gap: 48px;
+      margin-bottom: 36px;
     }
-    .footer__logo img {
-      height: 32px; width: auto;
+    .footer__logo img { height: 38px; width: auto; margin-bottom: 16px; }
+    .footer__tag {
+      font-size: 14.5px; font-weight: 700;
+      color: var(--ink-900);
+      margin: 0 0 4px;
+      line-height: 1.3;
     }
-    .footer__nav {
-      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    .footer__sub {
+      font-size: 13px; color: var(--ink-500);
+      margin: 0 0 20px; max-width: 420px;
     }
-    .footer__nav a {
+    .footer__legal-info {
+      font-size: 12.5px; color: var(--ink-500);
+      line-height: 1.55;
+    }
+    .footer__legal-info strong { color: var(--ink-700); font-weight: 600; }
+    .footer__col h4 {
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--ink-900);
+      margin: 0 0 14px;
+    }
+    .footer__col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .footer__col a {
       color: var(--ink-700);
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 500;
       transition: color .15s ease;
+      display: inline-flex; align-items: center; gap: 8px;
     }
-    .footer__nav a:hover { color: var(--zera-blue); }
-    .footer__legal {
+    .footer__col a:hover { color: var(--zera-blue); }
+    .footer__col svg { flex-shrink: 0; opacity: 0.75; }
+    .footer__bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 20px; flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
       font-size: 12px;
       color: var(--ink-500);
-      text-align: right;
-      line-height: 1.5;
     }
-    .footer__legal a {
-      color: var(--ink-700);
-      transition: color .15s ease;
-    }
-    .footer__legal a:hover { color: var(--zera-blue); }
+    .footer__bottom a { color: var(--ink-700); }
+    .footer__bottom a:hover { color: var(--zera-blue); }
 
     /* ───── MOTION SUTIL ───── */
     @media (prefers-reduced-motion: no-preference) {
@@ -1188,6 +1208,10 @@
       .aplicacoes__head { margin-bottom: 32px; }
       .produtos { padding: 64px 0 72px; }
       .produtos__layout { grid-template-columns: 1fr; gap: 40px; }
+      .produto-info { grid-template-columns: 1fr; gap: 14px; }
+      .beneficios { padding: 64px 0 72px; }
+      .beneficios__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .beneficios__head { margin-bottom: 32px; }
       .laudo { padding: 64px 0; }
       .laudo__layout { grid-template-columns: 1fr; gap: 40px; }
       .laudo__visual img { transform: none; max-width: 320px; }
@@ -1219,6 +1243,9 @@
       .pilares__grid { grid-template-columns: 1fr; }
       .desafios__grid { grid-template-columns: 1fr; }
       .aplicacoes__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .beneficios__grid { grid-template-columns: 1fr; gap: 14px; }
+      .produto-info { grid-template-columns: 1fr; }
+      .beneficio-card, .produto-card { padding: 20px 18px; }
       .embalagens { flex-wrap: wrap; justify-content: center; gap: 20px 16px; }
       .embalagem { flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); }
       .embalagem[data-size="1"] .embalagem__img,
@@ -1241,11 +1268,9 @@
       .form-card { padding: 20px; }
       .form-card button { font-size: 13.5px; padding: 12px 16px; }
       .pilar, .ben, .pilar__p, .ben__p { font-size: 13px; }
-      .footer__inner { grid-template-columns: 1fr; gap: 16px; text-align: center; justify-items: center; }
-      .footer__logo { display: flex; justify-content: center; }
-      .footer__logo img { margin: 0 auto; }
-      .footer__nav { justify-content: center; gap: 14px; }
-      .footer__legal { text-align: center; font-size: 11.5px; }
+      .footer { padding: 40px 0 20px; }
+      .footer__grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 28px; text-align: left; }
+      .footer__bottom { flex-direction: column; text-align: center; gap: 10px; }
       .laudo__visual img { max-width: 240px; }
       .hero__title { font-size: 32px; }
       .solucao__title, .beneficios__title, .comparativo__title, .faq__title, .confianca__title, .aplicacoes__title, .produtos__title, .desafios__title, .videos__title { font-size: 26px; }
@@ -1883,22 +1908,57 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
-      <div class="footer__inner">
-        <div class="footer__logo">
-          <img src="../assets/zera-logo.png" alt="ZERA" width="546" height="128" />
+      <div class="footer__grid">
+        <div class="footer__about">
+          <img src="../assets/zera-logo.png" alt="ZERA" class="footer__logo-img" width="546" height="128" style="height:38px; margin-bottom:16px;" />
+          <p class="footer__tag">ZERA, Dióxido de cloro estabilizado</p>
+          <p class="footer__sub">Fabricação própria para tratamento de água e efluentes em escala industrial.</p>
+          <p class="footer__legal-info">
+            <strong>ZERA Brasil Químicos LTDA</strong> · CNPJ 65.740.976/0001-46<br />
+            Rua Antônio Dias Oliveira, 159, Nova Esperança<br />
+            Balneário Camboriú/SC
+          </p>
         </div>
-        <nav class="footer__nav" aria-label="Rodapé">
-          <a href="#solucoes">Soluções</a>
-          <a href="#aplicacoes">Aplicações</a>
-          <a href="#produtos">Produtos</a>
-          <a href="#qualidade">Qualidade</a>
-          <a href="#depoimentos">Depoimentos</a>
-          <a href="#duvidas">Dúvidas</a>
-        </nav>
-        <div class="footer__legal">
-          © 2024 ZERA Brasil. Todos os direitos reservados.<br />
-          <a href="#">Política de privacidade</a> &nbsp;|&nbsp; <a href="#">Termos de uso</a>
+
+        <div class="footer__col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#solucoes">Empresa</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#aplicacoes">Aplicações</a></li>
+            <li><a href="#qualidade">Regulatório</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
         </div>
+
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="mailto:comercial@zerabrasil.com.br">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                comercial@zerabrasil.com.br
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/5547997391250" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.56-1.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a9.94 9.94 0 0 1-5.08-1.38l-.36-.22-3 .79.8-2.93-.23-.37A10 10 0 1 1 12 21.48Z"/></svg>
+                +55 47 99739-1250
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/zerabrasil" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+                @zerabrasil
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>© 2024 ZERA Brasil Químicos LTDA. Todos os direitos reservados.</div>
+        <div><a href="#">Política de privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de uso</a></div>
       </div>
     </div>
   </footer>
