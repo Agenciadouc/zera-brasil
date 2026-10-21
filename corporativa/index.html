@@ -1,0 +1,1741 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zera | Dióxido de cloro estabilizado para tratamento de água</title>
+  <meta name="description" content="Zera Brasil Químicos: dióxido de cloro estabilizado para ETA, ETE, água de processo e controle de odor. Orientação técnica e dosagem sob medida pra cada operação." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --zera-blue: #1A3DB8;
+      --zera-blue-deep: #152E8F;
+      --zera-blue-light: #E9EEFF;
+      --zera-yellow: #FFD60A;
+      --zera-yellow-deep: #F5C100;
+      --ink-900: #0B1221;
+      --ink-700: #243049;
+      --ink-500: #5B6478;
+      --ink-300: #B5BBC8;
+      --line: #E6E8EE;
+      --bg: #FFFFFF;
+      --bg-soft: #F7F8FB;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+      color: var(--ink-900);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+    /* ───── NAV ───── */
+    .nav {
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .nav__inner {
+      display: flex; align-items: center; gap: 32px;
+      padding: 18px 32px;
+      max-width: 1440px; margin: 0 auto;
+    }
+    .nav__logo { flex-shrink: 0; }
+    .nav__logo img { height: 36px; width: auto; }
+    .nav__menu {
+      display: flex; align-items: center; gap: 28px;
+      flex: 1; justify-content: center;
+    }
+    .nav__link {
+      font-size: 14px; font-weight: 500; color: var(--ink-700);
+      padding: 6px 2px;
+      transition: color .15s ease;
+    }
+    .nav__link:hover { color: var(--zera-blue); }
+    .nav__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--zera-yellow);
+      color: var(--ink-900);
+      font-weight: 700; font-size: 14px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      transition: background .15s ease, transform .1s ease;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.04);
+    }
+    .nav__cta:hover { background: var(--zera-yellow-deep); }
+    .nav__cta svg { flex-shrink: 0; }
+
+    /* ───── HERO ───── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      padding: 72px 0 56px;
+      isolation: isolate;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: 70% center;
+      z-index: -2;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg,
+          rgba(255,255,255,0.97) 0%,
+          rgba(255,255,255,0.92) 30%,
+          rgba(255,255,255,0.55) 55%,
+          rgba(255,255,255,0.1) 80%,
+          rgba(255,255,255,0) 100%);
+      z-index: -1;
+    }
+    .hero__copy { max-width: 640px; }
+    .hero__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 18px;
+    }
+    .hero__title {
+      font-size: clamp(34px, 4.2vw, 54px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink-900);
+      margin: 0 0 24px;
+      text-wrap: balance;
+    }
+    .hero__title .blue { color: var(--zera-blue); display: block; }
+    .hero__title .black { display: block; }
+    .hero__sub {
+      font-size: 17px; line-height: 1.55;
+      color: var(--ink-700);
+      max-width: 520px;
+      margin: 0 0 32px;
+    }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 600; font-size: 15px;
+      padding: 15px 26px;
+      border-radius: 999px;
+      transition: all .15s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn--primary {
+      background: var(--zera-blue);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(26,61,184,0.25);
+    }
+    .btn--primary:hover { background: var(--zera-blue-deep); transform: translateY(-1px); }
+    .btn--ghost {
+      background: #fff;
+      color: var(--ink-900);
+      border-color: var(--line);
+    }
+    .btn--ghost:hover { border-color: var(--zera-blue); color: var(--zera-blue); }
+
+    /* ───── PILARES ───── */
+    .pilares {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 36px 0 56px;
+    }
+    .pilares__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .pilar { display: flex; gap: 14px; align-items: flex-start; }
+    .pilar__icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      color: var(--zera-blue);
+    }
+    .pilar__h { font-size: 17px; font-weight: 700; margin: 0 0 4px; color: var(--ink-900); }
+    .pilar__p { font-size: 14px; color: var(--ink-500); margin: 0; line-height: 1.45; }
+
+    /* ───── DESAFIOS (dark) ───── */
+    .desafios {
+      position: relative;
+      padding: 96px 0 112px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(11,18,33,0.92) 0%, rgba(11,18,33,0.96) 100%),
+        radial-gradient(1200px 600px at 80% 30%, rgba(26,61,184,0.22), transparent 60%),
+        linear-gradient(135deg, #0B1221 0%, #11213D 100%);
+      overflow: hidden;
+    }
+    .desafios::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(2px 2px at 20% 25%, rgba(255,255,255,0.03) 50%, transparent 51%),
+        radial-gradient(2px 2px at 70% 70%, rgba(255,255,255,0.025) 50%, transparent 51%),
+        radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.03) 50%, transparent 51%);
+      background-size: 180px 180px, 220px 220px, 140px 140px;
+      pointer-events: none;
+    }
+    .desafios__head { max-width: 760px; margin-bottom: 48px; position: relative; z-index: 1; }
+    .desafios__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: #7FA0FF;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .desafios__title {
+      font-size: clamp(30px, 3.6vw, 46px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .desafios__grid {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .desafio-card {
+      background: rgba(17, 26, 46, 0.75);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 28px 24px 32px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .desafio-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(127,160,255,0.3);
+      background: rgba(22, 34, 58, 0.85);
+    }
+    .desafio-card__icon {
+      width: 56px; height: 56px;
+      color: #7FA0FF;
+      margin-bottom: 24px;
+    }
+    .desafio-card__icon svg { width: 100%; height: 100%; }
+    .desafio-card__h {
+      font-size: 18px; font-weight: 700;
+      color: #fff;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+    .desafio-card__p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.62);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ───── SOLUCAO (bg full igual hero) ───── */
+    .solucao {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      padding: 88px 0;
+      isolation: isolate;
+    }
+    .solucao__bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: 75% center;
+      z-index: -2;
+    }
+    .solucao__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.97) 0%,
+        rgba(255,255,255,0.92) 32%,
+        rgba(255,255,255,0.55) 55%,
+        rgba(255,255,255,0.1) 80%,
+        rgba(255,255,255,0) 100%);
+      z-index: -1;
+    }
+    .solucao__copy { max-width: 620px; position: relative; z-index: 1; }
+    .solucao__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 18px;
+    }
+    .solucao__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--zera-blue);
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .solucao__p {
+      font-size: 16.5px; line-height: 1.6;
+      color: var(--ink-700);
+      margin: 0;
+      max-width: 540px;
+    }
+    .solucao__caption {
+      position: absolute;
+      right: 32px; bottom: 32px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 11px;
+      color: var(--ink-700);
+      line-height: 1.4;
+      font-weight: 500;
+      max-width: 190px;
+      z-index: 1;
+    }
+    .solucao__caption strong { color: var(--ink-900); font-weight: 700; display: block; margin-bottom: 2px; }
+
+    /* ───── BENEFICIOS / POR QUE ESCOLHER (cinza claro) ───── */
+    .beneficios { background: var(--bg-soft); padding: 88px 0 96px; }
+    .beneficios__head { max-width: 760px; margin-bottom: 48px; }
+    .beneficios__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .beneficios__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--zera-blue);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .beneficios__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .beneficio-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 24px 30px;
+      box-shadow: 0 2px 12px rgba(11,18,33,0.04);
+      border: 1px solid rgba(230,232,238,0.6);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .beneficio-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(11,18,33,0.08);
+    }
+    .beneficio-card__icon {
+      width: 44px; height: 44px;
+      color: var(--zera-blue);
+      margin-bottom: 20px;
+    }
+    .beneficio-card__icon svg { width: 100%; height: 100%; }
+    .beneficio-card__h {
+      font-size: 17px; font-weight: 700;
+      color: var(--ink-900);
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .beneficio-card__p {
+      font-size: 14px; line-height: 1.5;
+      color: var(--ink-500);
+      margin: 0;
+    }
+
+    /* ───── APLICACOES (branco) ───── */
+    .aplicacoes { background: #fff; padding: 88px 0 96px; }
+    .aplicacoes__head { max-width: 820px; margin-bottom: 44px; }
+    .aplicacoes__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .aplicacoes__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink-900);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .aplicacoes__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+    }
+    .aplicacao {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .aplicacao__img {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--bg-soft);
+      box-shadow: 0 4px 14px rgba(11,18,33,0.06);
+    }
+    .aplicacao__img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .aplicacao:hover .aplicacao__img img { transform: scale(1.06); }
+    .aplicacao__placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #DCE6FF 0%, #B8CBFF 100%);
+      display: grid; place-items: center;
+      color: var(--zera-blue);
+    }
+    .aplicacao__placeholder svg { width: 42px; height: 42px; opacity: 0.75; }
+    .aplicacao__h {
+      font-size: 16px; font-weight: 700;
+      color: var(--ink-900);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .aplicacao__p {
+      font-size: 13px; line-height: 1.45;
+      color: var(--ink-500);
+      margin: 0;
+    }
+
+    /* ───── PRODUTOS / EMBALAGENS ───── */
+    .produtos { background: var(--bg-soft); padding: 88px 0 96px; }
+    .produtos__head { max-width: 820px; margin-bottom: 44px; }
+    .produtos__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .produtos__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink-900);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .produtos__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: end;
+    }
+    .embalagens {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0;
+    }
+    .embalagem {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      flex: 1; min-width: 0;
+    }
+    .embalagem__img {
+      width: 100%;
+      display: grid; place-items: end center;
+    }
+    .embalagem__img img {
+      max-width: 100%; max-height: 100%;
+      width: auto; height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+    }
+    .embalagem__label {
+      font-size: 13px; font-weight: 600;
+      color: var(--ink-500);
+      text-align: center;
+    }
+    /* escalona proporcional por tamanho real do mockup — galoes grandes */
+    .embalagem[data-size="1"] .embalagem__img { height: 180px; }
+    .embalagem[data-size="5"] .embalagem__img { height: 280px; }
+    .embalagem[data-size="20"] .embalagem__img { height: 320px; }
+    .embalagem[data-size="50"] .embalagem__img { height: 360px; }
+    .embalagem[data-size="1000"] .embalagem__img { height: 400px; }
+
+    .produto-info { display: grid; gap: 16px; }
+    .produto-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: start;
+      box-shadow: 0 2px 10px rgba(11,18,33,0.04);
+      border: 1px solid rgba(230,232,238,0.6);
+    }
+    .produto-card__icon {
+      width: 44px; height: 44px;
+      color: var(--zera-blue);
+    }
+    .produto-card__icon svg { width: 100%; height: 100%; }
+    .produto-card__h {
+      font-size: 17px; font-weight: 700;
+      color: var(--ink-900);
+      margin: 0 0 8px;
+    }
+    .produto-card__p {
+      font-size: 14px; line-height: 1.55;
+      color: var(--ink-500);
+      margin: 0;
+    }
+
+    /* ───── LAUDO TÉCNICO ───── */
+    .laudo { background: #fff; padding: 96px 0; }
+    .laudo__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 48px;
+      align-items: center;
+    }
+    .laudo__copy { max-width: 420px; }
+    .laudo__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .laudo__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink-900);
+      margin: 0 0 18px;
+    }
+    .laudo__p {
+      font-size: 15.5px; line-height: 1.6;
+      color: var(--ink-500);
+      margin: 0 0 24px;
+    }
+    .laudo__checks {
+      display: grid; gap: 10px;
+    }
+    .laudo__checks li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 15px; font-weight: 600;
+      color: var(--ink-900);
+      list-style: none;
+    }
+    .laudo__checks ul { padding: 0; margin: 0; display: grid; gap: 10px; }
+    .laudo__check-ico {
+      width: 22px; height: 22px;
+      flex-shrink: 0;
+      display: grid; place-items: center;
+      background: var(--zera-blue);
+      color: #fff;
+      border-radius: 50%;
+    }
+    .laudo__visual {
+      display: grid; place-items: center;
+    }
+    .laudo__visual img {
+      max-width: 100%; height: auto;
+      border-radius: 8px;
+      transform: rotate(-4deg);
+      box-shadow: 0 20px 45px rgba(11,18,33,0.14);
+    }
+    .laudo__card {
+      background: var(--zera-blue-light);
+      border-radius: 16px;
+      padding: 28px 28px 32px;
+    }
+    .laudo__card-icon {
+      width: 44px; height: 44px;
+      color: var(--zera-blue);
+      margin-bottom: 18px;
+    }
+    .laudo__card-icon svg { width: 100%; height: 100%; }
+    .laudo__card h3 {
+      font-size: 18px; font-weight: 700;
+      color: var(--ink-900);
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+    .laudo__card p {
+      font-size: 14px; line-height: 1.55;
+      color: var(--ink-500);
+      margin: 0;
+    }
+
+    /* ───── VIDEOS / ZERA EM OPERACAO (dark) ───── */
+    .videos {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 96px;
+      color: #fff;
+      background:
+        radial-gradient(900px 500px at 20% 30%, rgba(26,61,184,0.22), transparent 60%),
+        linear-gradient(135deg, #0B1221 0%, #11213D 100%);
+    }
+    .videos__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr);
+      gap: 56px;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+    .videos__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: #7FA0FF;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .videos__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+    .videos__p {
+      font-size: 15.5px; line-height: 1.6;
+      color: rgba(255,255,255,0.72);
+      margin: 0 0 28px;
+      max-width: 380px;
+    }
+    .videos__cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--zera-yellow);
+      color: var(--ink-900);
+      font-weight: 700; font-size: 15px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      transition: background .15s ease, transform .1s ease;
+      box-shadow: 0 6px 18px rgba(255,214,10,0.25);
+    }
+    .videos__cta:hover { background: var(--zera-yellow-deep); transform: translateY(-1px); }
+
+    .videos__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .video-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      cursor: pointer;
+      transition: transform .2s ease;
+      /* Placeholder: gradient dark escurecendo */
+      background:
+        radial-gradient(70% 60% at 50% 35%, rgba(127,160,255,0.18), transparent 70%),
+        linear-gradient(160deg, #1a2b4a 0%, #0b1428 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .video-card:hover { transform: translateY(-3px); }
+    .video-card::after {
+      /* Gradient inferior pro titulo ficar legivel */
+      content: '';
+      position: absolute; left: 0; right: 0; bottom: 0;
+      height: 55%;
+      background: linear-gradient(180deg, rgba(11,20,40,0) 0%, rgba(11,20,40,0.85) 70%, rgba(11,20,40,0.95) 100%);
+      pointer-events: none;
+    }
+    .video-card__play {
+      position: absolute; top: 44%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      border: 2px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: grid; place-items: center;
+      color: #fff;
+      transition: background .15s ease, border-color .15s ease;
+      z-index: 2;
+    }
+    .video-card:hover .video-card__play {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .video-card__play svg { margin-left: 3px; }
+    .video-card__title {
+      position: absolute; left: 20px; right: 20px; bottom: 20px;
+      font-size: 16px; font-weight: 700;
+      line-height: 1.25;
+      color: #fff;
+      z-index: 2;
+    }
+
+    /* ───── EMPRESAS QUE CONFIAM (branco) ───── */
+    .confianca { background: #fff; padding: 88px 0; }
+    .confianca__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      gap: 56px;
+      align-items: center;
+    }
+    .confianca__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .confianca__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink-900);
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+    .confianca__p {
+      font-size: 15.5px; line-height: 1.6;
+      color: var(--ink-500);
+      margin: 0;
+      max-width: 440px;
+    }
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .logo-slot {
+      aspect-ratio: 1.6 / 1;
+      background: var(--bg-soft);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      padding: 20px;
+      border: 1px dashed rgba(181,187,200,0.4);
+    }
+    .logo-slot span {
+      font-size: 13px;
+      color: var(--ink-300);
+      text-align: center;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    /* ───── COMPARATIVO (cinza claro) ───── */
+    .comparativo { background: var(--bg-soft); padding: 88px 0; }
+    .comparativo__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+      gap: 56px;
+      align-items: center;
+    }
+    .comparativo__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .comparativo__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--zera-blue);
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+    .comparativo__p {
+      font-size: 15.5px; line-height: 1.6;
+      color: var(--ink-500);
+      margin: 0;
+      max-width: 420px;
+    }
+    .cmp-table {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(11,18,33,0.04);
+      border: 1px solid rgba(230,232,238,0.6);
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .cmp-table thead th {
+      font-size: 13px; font-weight: 700;
+      color: var(--ink-900);
+      text-align: center;
+      padding: 16px 12px;
+      border-bottom: 1px solid var(--line);
+      background: #FAFBFD;
+    }
+    .cmp-table thead th:first-child { text-align: left; padding-left: 22px; }
+    .cmp-table thead th.is-zera {
+      color: var(--zera-blue);
+      background: var(--zera-blue-light);
+    }
+    .cmp-table thead th.is-zera small { display: block; font-size: 10px; font-weight: 600; margin-top: 2px; opacity: 0.9; }
+    .cmp-table tbody td {
+      padding: 14px 12px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--ink-700);
+    }
+    .cmp-table tbody td:first-child { text-align: left; padding-left: 22px; font-weight: 500; color: var(--ink-900); }
+    .cmp-table .ok { color: #19A34A; display: inline-grid; place-items: center; width: 22px; height: 22px; background: rgba(25,163,74,0.1); border-radius: 50%; }
+    .cmp-table .no { color: #DC2626; display: inline-grid; place-items: center; width: 22px; height: 22px; background: rgba(220,38,38,0.1); border-radius: 50%; }
+    .cmp-table .dash { color: var(--ink-300); font-weight: 600; }
+
+    /* ───── FAQ (branco) ───── */
+    .faq { background: #fff; padding: 88px 0; }
+    .faq__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+      gap: 56px;
+      align-items: start;
+    }
+    .faq__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: var(--zera-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .faq__title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--zera-blue);
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+    .faq__p {
+      font-size: 15.5px; line-height: 1.6;
+      color: var(--ink-500);
+      margin: 0;
+      max-width: 420px;
+    }
+    .faq__list { display: grid; gap: 10px; }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .faq-item[open] { border-color: var(--zera-blue); box-shadow: 0 4px 14px rgba(26,61,184,0.08); }
+    .faq-item summary {
+      list-style: none;
+      padding: 18px 22px;
+      font-size: 15px; font-weight: 600;
+      color: var(--ink-900);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 22px; font-weight: 400;
+      color: var(--zera-blue);
+      line-height: 1;
+      transition: transform .2s ease;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item__body {
+      padding: 0 22px 20px;
+      font-size: 14.5px; line-height: 1.6;
+      color: var(--ink-500);
+    }
+
+    /* ───── CTA + FORM (dark) ───── */
+    .cta-form {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0;
+      color: #fff;
+      isolation: isolate;
+    }
+    .cta-form__bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -2;
+      filter: brightness(0.55) saturate(0.9);
+    }
+    .cta-form__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(11,18,33,0.88) 0%, rgba(17,33,61,0.78) 100%);
+      z-index: -1;
+    }
+    .cta-form__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 56px;
+      align-items: center;
+    }
+    .cta-form__eyebrow {
+      font-size: 13px; font-weight: 600;
+      color: #7FA0FF;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+    .cta-form__title {
+      font-size: clamp(30px, 3.6vw, 46px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0 0 10px;
+      text-wrap: balance;
+    }
+    .cta-form__title .yellow { color: var(--zera-yellow); display: block; }
+    .cta-form__p {
+      font-size: 15.5px; line-height: 1.6;
+      color: rgba(255,255,255,0.75);
+      margin: 20px 0 0;
+      max-width: 460px;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      color: var(--ink-900);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .form-card__h {
+      font-size: 18px; font-weight: 700;
+      margin: 0 0 20px;
+      color: var(--ink-900);
+    }
+    .form-card__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+    .form-card__fields { display: grid; gap: 12px; }
+    .form-card input[type="text"], .form-card input[type="tel"] {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--ink-900);
+      transition: border-color .15s ease;
+    }
+    .form-card input:focus {
+      outline: none;
+      border-color: var(--zera-blue);
+      box-shadow: 0 0 0 3px rgba(26,61,184,0.1);
+    }
+    .form-card__group {
+      display: grid; gap: 8px;
+    }
+    .form-card__group-label {
+      font-size: 13px; font-weight: 600;
+      color: var(--ink-700);
+      margin-bottom: 2px;
+    }
+    .form-card__radio {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13.5px;
+      color: var(--ink-700);
+      cursor: pointer;
+    }
+    .form-card__radio input { accent-color: var(--zera-blue); }
+    .form-card button {
+      width: 100%;
+      margin-top: 18px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--zera-yellow);
+      color: var(--ink-900);
+      font-weight: 700; font-size: 15px;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background .15s ease;
+      font-family: inherit;
+    }
+    .form-card button:hover { background: var(--zera-yellow-deep); }
+
+    /* ───── FOOTER ───── */
+    .footer {
+      background: #0B1221;
+      color: rgba(255,255,255,0.6);
+      padding: 32px 0;
+      font-size: 13px;
+    }
+    .footer__inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .footer__logo img {
+      height: 32px; width: auto;
+      filter: brightness(0) invert(1) opacity(0.95);
+    }
+    .footer__nav {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    }
+    .footer__nav a {
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+      transition: color .15s ease;
+    }
+    .footer__nav a:hover { color: #fff; }
+    .footer__legal {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+    }
+    .footer__legal a {
+      color: rgba(255,255,255,0.65);
+      transition: color .15s ease;
+    }
+    .footer__legal a:hover { color: #fff; }
+
+    /* ───── RESPONSIVO ───── */
+    @media (max-width: 980px) {
+      .nav__menu { display: none; }
+      .nav__inner { padding: 16px 20px; }
+      .wrap { padding: 0 20px; }
+      .hero { min-height: 480px; padding: 48px 0 56px; }
+      .hero__bg { object-position: 65% center; }
+      .hero__overlay {
+        background: linear-gradient(180deg,
+          rgba(255,255,255,0.96) 0%,
+          rgba(255,255,255,0.9) 55%,
+          rgba(255,255,255,0.6) 85%,
+          rgba(255,255,255,0.3) 100%);
+      }
+      .hero__copy { max-width: 100%; }
+      .hero__sub { font-size: 16px; }
+      .pilares__grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .desafios { padding: 64px 0 72px; }
+      .desafios__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .desafios__head { margin-bottom: 32px; }
+      .aplicacoes { padding: 56px 0 72px; }
+      .aplicacoes__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .aplicacoes__head { margin-bottom: 32px; }
+      .produtos { padding: 64px 0 72px; }
+      .produtos__layout { grid-template-columns: 1fr; gap: 40px; }
+      .laudo { padding: 64px 0; }
+      .laudo__layout { grid-template-columns: 1fr; gap: 40px; }
+      .laudo__visual img { transform: none; max-width: 320px; }
+      .videos { padding: 64px 0 72px; }
+      .videos__layout { grid-template-columns: 1fr; gap: 36px; }
+      .videos__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .confianca { padding: 64px 0; }
+      .confianca__layout { grid-template-columns: 1fr; gap: 36px; }
+      .logos { grid-template-columns: repeat(5, 1fr); gap: 10px; }
+      .comparativo { padding: 64px 0; }
+      .comparativo__layout { grid-template-columns: 1fr; gap: 36px; }
+      .cmp-table { font-size: 12.5px; }
+      .cmp-table thead th { padding: 12px 8px; }
+      .cmp-table tbody td { padding: 12px 8px; }
+      .faq { padding: 64px 0; }
+      .faq__layout { grid-template-columns: 1fr; gap: 32px; }
+      .cta-form { padding: 64px 0; }
+      .cta-form__layout { grid-template-columns: 1fr; gap: 40px; }
+      .form-card { padding: 24px; }
+      .form-card__layout { grid-template-columns: 1fr; gap: 20px; }
+      .footer__inner { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+      .footer__nav { justify-content: center; }
+      .footer__legal { text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .pilares__grid { grid-template-columns: 1fr; }
+      .desafios__grid { grid-template-columns: 1fr; }
+      .aplicacoes__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .embalagens { flex-wrap: wrap; gap: 20px 10px; }
+      .embalagem { min-width: 25%; }
+      .videos__grid { grid-template-columns: 1fr; gap: 14px; }
+      .video-card { aspect-ratio: 16 / 10; }
+      .logos { grid-template-columns: repeat(2, 1fr); }
+      .cmp-table { font-size: 11.5px; }
+      .cmp-table thead th { padding: 10px 6px; font-size: 11px; }
+      .cmp-table tbody td { padding: 10px 6px; }
+      .cmp-table tbody td:first-child { font-size: 12px; }
+      .btn { padding: 13px 20px; font-size: 14px; width: 100%; justify-content: center; }
+      .nav__cta { padding: 9px 16px; font-size: 13px; }
+      .nav__cta span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="Zera Brasil Químicos">
+        <img src="../assets/zera-logo.png" alt="ZERA — Dióxido de cloro estabilizado" />
+      </a>
+      <nav class="nav__menu" aria-label="Principal">
+        <a href="#solucoes" class="nav__link">Soluções</a>
+        <a href="#aplicacoes" class="nav__link">Aplicações</a>
+        <a href="#produtos" class="nav__link">Produtos</a>
+        <a href="#qualidade" class="nav__link">Qualidade</a>
+        <a href="#depoimentos" class="nav__link">Depoimentos</a>
+        <a href="#duvidas" class="nav__link">Dúvidas</a>
+      </nav>
+      <a href="https://wa.me/5500000000000" class="nav__cta" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.56-1.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a9.94 9.94 0 0 1-5.08-1.38l-.36-.22-3 .79.8-2.93-.23-.37A10 10 0 1 1 12 21.48Zm5.47-7.34c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.17.2-.35.22-.65.07a8.2 8.2 0 0 1-2.42-1.5 9.05 9.05 0 0 1-1.68-2.08c-.17-.3 0-.45.13-.6.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57a1.1 1.1 0 0 0-.8.37 3.34 3.34 0 0 0-1.04 2.48c0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63a4.1 4.1 0 0 0 1.87.12c.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+        <span>Falar com um especialista</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero__bg" src="../assets/hero-corporativa.png" alt="Técnico analisando amostra de água tratada com Zera numa estação de tratamento" />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero__copy">
+        <div class="hero__eyebrow">Zera | Tratamento de água e efluentes</div>
+        <h1 class="hero__title">
+          <span class="black">Um produto só.</span>
+          <span class="black">Menos trabalho.</span>
+          <span class="blue">Tratamento sob medida</span>
+          <span class="blue">para sua operação.</span>
+        </h1>
+        <p class="hero__sub">
+          Dióxido de cloro estabilizado para água de processo, ETA e ETE. Soluções com orientação técnica e dosagem definida para cada projeto.
+        </p>
+        <div class="hero__ctas">
+          <a href="https://wa.me/5500000000000" class="btn btn--primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.56-1.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a9.94 9.94 0 0 1-5.08-1.38l-.36-.22-3 .79.8-2.93-.23-.37A10 10 0 1 1 12 21.48Zm5.47-7.34c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.17.2-.35.22-.65.07a8.2 8.2 0 0 1-2.42-1.5 9.05 9.05 0 0 1-1.68-2.08c-.17-.3 0-.45.13-.6.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57a1.1 1.1 0 0 0-.8.37 3.34 3.34 0 0 0-1.04 2.48c0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63a4.1 4.1 0 0 0 1.87.12c.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+            Falar com um especialista
+          </a>
+          <a href="#aplicacoes" class="btn btn--ghost">
+            Ver aplicações
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="pilares">
+    <div class="wrap">
+      <div class="pilares__grid">
+        <div class="pilar">
+          <div class="pilar__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2.5c3 4 7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 4-8 7-12Z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pilar__h">ETA e ETE</h3>
+            <p class="pilar__p">Para tratamento de água e efluentes.</p>
+          </div>
+        </div>
+
+        <div class="pilar">
+          <div class="pilar__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15 1.65 1.65 0 0 0 3.09 14H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.26.6.71 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pilar__h">Água de processo</h3>
+            <p class="pilar__p">Controle de qualidade em processos industriais.</p>
+          </div>
+        </div>
+
+        <div class="pilar">
+          <div class="pilar__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 10c3-4 6-4 9 0s6 4 9 0"/>
+              <path d="M3 16c3-4 6-4 9 0s6 4 9 0"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pilar__h">Controle de odor</h3>
+            <p class="pilar__p">Redução de odores em efluentes e sistemas.</p>
+          </div>
+        </div>
+
+        <div class="pilar">
+          <div class="pilar__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 14v-2a9 9 0 0 1 18 0v2"/>
+              <path d="M21 14a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2v2Z"/>
+              <path d="M3 14a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2v2Z"/>
+              <path d="M18 16v1a4 4 0 0 1-4 4h-1"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pilar__h">Suporte técnico</h3>
+            <p class="pilar__p">Orientação especializada para cada projeto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESAFIOS OPERACIONAIS (dark) -->
+  <section class="desafios">
+    <div class="wrap">
+      <div class="desafios__head">
+        <div class="desafios__eyebrow">Desafios operacionais</div>
+        <h2 class="desafios__title">Problemas reais que impactam sua operação.</h2>
+      </div>
+      <div class="desafios__grid">
+        <div class="desafio-card">
+          <div class="desafio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 3h6v4l5 10a3 3 0 0 1-2.7 4H5.7A3 3 0 0 1 3 17L8 7V3Z"/>
+              <path d="M8 14h8"/>
+            </svg>
+          </div>
+          <h3 class="desafio-card__h">Muitos produtos químicos</h3>
+          <p class="desafio-card__p">Mais complexidade no manuseio, estoque e controle operacional.</p>
+        </div>
+
+        <div class="desafio-card">
+          <div class="desafio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <h3 class="desafio-card__h">Correções lentas e ineficientes</h3>
+          <p class="desafio-card__p">Dificuldade para manter a qualidade da água e do efluente.</p>
+        </div>
+
+        <div class="desafio-card">
+          <div class="desafio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15 1.65 1.65 0 0 0 3.09 14H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.26.6.71 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+            </svg>
+          </div>
+          <h3 class="desafio-card__h">Variação na qualidade do efluente</h3>
+          <p class="desafio-card__p">Oscilações de carga e interferências no processo.</p>
+        </div>
+
+        <div class="desafio-card">
+          <div class="desafio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="16" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="desafio-card__h">Resultados fora da especificação</h3>
+          <p class="desafio-card__p">Risco de não conformidade em análises laboratoriais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÃO ZERA (bg full, igual hero) -->
+  <section class="solucao" id="solucoes">
+    <img class="solucao__bg" src="../assets/comparativo-agua.png" alt="Comparativo de água turva (antes) e limpa (depois do tratamento com Zera)" />
+    <div class="solucao__overlay" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="solucao__copy">
+        <div class="solucao__eyebrow">Solução Zera</div>
+        <h2 class="solucao__title">O oxidante utilizado em operações exigentes.</h2>
+        <p class="solucao__p">
+          O ZERA é um dióxido de cloro estabilizado, desenvolvido para o tratamento de água de processo, ETA e ETE, com aplicações em controle de ferro, manganês, cor, odor, desinfecção e redução de DBO e DQO.
+        </p>
+      </div>
+    </div>
+    <div class="solucao__caption">
+      <strong>Água de processo</strong>
+      antes e depois do tratamento <em>(imagem ilustrativa)</em>
+    </div>
+  </section>
+
+  <!-- PRINCIPAIS APLICAÇÕES -->
+  <section class="aplicacoes" id="aplicacoes">
+    <div class="wrap">
+      <div class="aplicacoes__head">
+        <div class="aplicacoes__eyebrow">Principais aplicações</div>
+        <h2 class="aplicacoes__title">Uma solução para diferentes operações.</h2>
+      </div>
+      <div class="aplicacoes__grid">
+
+        <div class="aplicacao">
+          <div class="aplicacao__img">
+            <img src="../assets/apl-eta.jpg" alt="Estação de Tratamento de Água (ETA) com tanques de decantação" />
+          </div>
+          <h3 class="aplicacao__h">ETA</h3>
+          <p class="aplicacao__p">Tratamento de água para consumo.</p>
+        </div>
+
+        <div class="aplicacao">
+          <div class="aplicacao__img">
+            <img src="../assets/apl-2.jpg" alt="Tanque de aeração em estação de tratamento de efluentes" />
+          </div>
+          <h3 class="aplicacao__h">ETE</h3>
+          <p class="aplicacao__p">Tratamento de efluentes industriais e sanitários.</p>
+        </div>
+
+        <div class="aplicacao">
+          <div class="aplicacao__img">
+            <img src="../assets/apl-3.jpg" alt="Tubulações industriais de água para reúso" />
+          </div>
+          <h3 class="aplicacao__h">Reúso de água</h3>
+          <p class="aplicacao__p">Segurança e qualidade para o reúso.</p>
+        </div>
+
+        <div class="aplicacao">
+          <div class="aplicacao__img">
+            <img src="../assets/apl-4.jpg" alt="Tanques inox de processo industrial" />
+          </div>
+          <h3 class="aplicacao__h">Água de processo</h3>
+          <p class="aplicacao__p">Indústrias, frigoríficos e agroindústrias.</p>
+        </div>
+
+        <div class="aplicacao">
+          <div class="aplicacao__img">
+            <img src="../assets/apl-5.jpg" alt="Torre de resfriamento industrial" />
+          </div>
+          <h3 class="aplicacao__h">Torres de resfriamento</h3>
+          <p class="aplicacao__p">Controle de biofilme e qualidade da água.</p>
+        </div>
+
+        <div class="aplicacao">
+          <div class="aplicacao__img">
+            <img src="../assets/apl-1.jpg" alt="Reservatório de água industrial" />
+          </div>
+          <h3 class="aplicacao__h">Reservatórios</h3>
+          <p class="aplicacao__p">Manutenção da qualidade da água.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS / EMBALAGENS -->
+  <section class="produtos" id="produtos">
+    <div class="wrap">
+      <div class="produtos__head">
+        <div class="produtos__eyebrow">Linha de produtos</div>
+        <h2 class="produtos__title">Soluções para cada necessidade.</h2>
+      </div>
+      <div class="produtos__layout">
+        <div class="embalagens">
+          <div class="embalagem" data-size="1">
+            <div class="embalagem__img"><img src="../assets/produto-1l.jpg" alt="Zera 1 litro" /></div>
+            <div class="embalagem__label">1 litro</div>
+          </div>
+          <div class="embalagem" data-size="5">
+            <div class="embalagem__img"><img src="../assets/produto-5l.jpg" alt="Zera 5 litros" /></div>
+            <div class="embalagem__label">5 litros</div>
+          </div>
+          <div class="embalagem" data-size="20">
+            <div class="embalagem__img"><img src="../assets/produto-20l.jpg" alt="Zera 20 litros" /></div>
+            <div class="embalagem__label">20 litros</div>
+          </div>
+          <div class="embalagem" data-size="50">
+            <div class="embalagem__img"><img src="../assets/produto-50l.jpg" alt="Zera 50 litros" /></div>
+            <div class="embalagem__label">50 litros</div>
+          </div>
+          <div class="embalagem" data-size="1000">
+            <div class="embalagem__img"><img src="../assets/produto-ibc.jpg" alt="Zera 1000 litros IBC" /></div>
+            <div class="embalagem__label">1000 litros (IBC)</div>
+          </div>
+        </div>
+
+        <div class="produto-info">
+          <div class="produto-card">
+            <div class="produto-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 2h8v3H8z"/>
+                <path d="M6 5h12v2a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V5z"/>
+                <path d="M7 10h10v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10z"/>
+                <path d="M10 14h4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="produto-card__h">Produto pronto</h3>
+              <p class="produto-card__p">Solução estabilizada de dióxido de cloro pronta para uso, nas embalagens de 1 L, 5 L, 20 L, 50 L e IBC 1000 L.</p>
+            </div>
+          </div>
+
+          <div class="produto-card">
+            <div class="produto-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2h4v4h-4z"/>
+                <path d="M8 6h8l1 3H7l1-3z"/>
+                <path d="M7 9h10v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9z"/>
+                <text x="12" y="18" font-size="6" text-anchor="middle" fill="currentColor" stroke="none" font-weight="700">A+B</text>
+              </svg>
+            </div>
+            <div>
+              <h3 class="produto-card__h">Kit A + B</h3>
+              <p class="produto-card__p">1 litro de kit = 20 litros de solução pronta, conforme orientação técnica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE ESCOLHER (ultimo bloco) -->
+  <section class="beneficios">
+    <div class="wrap">
+      <div class="beneficios__head">
+        <div class="beneficios__eyebrow">Por que escolher o Zera?</div>
+        <h2 class="beneficios__title">Menos complexidade, mais resultado.</h2>
+      </div>
+      <div class="beneficios__grid">
+        <div class="beneficio-card">
+          <div class="beneficio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12,2 22,7 12,12 2,7"/>
+              <polyline points="2,12 12,17 22,12"/>
+              <polyline points="2,17 12,22 22,17"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-card__h">Menos etapas</h3>
+          <p class="beneficio-card__p">Simplifica o processo de tratamento.</p>
+        </div>
+
+        <div class="beneficio-card">
+          <div class="beneficio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15 1.65 1.65 0 0 0 3.09 14H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.26.6.71 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-card__h">Produto pronto para uso</h3>
+          <p class="beneficio-card__p">Sem necessidade de gerador para a solução pronta.</p>
+        </div>
+
+        <div class="beneficio-card">
+          <div class="beneficio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3,17 9,11 13,15 21,7"/>
+              <polyline points="15,7 21,7 21,13"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-card__h">Dosagem por projeto</h3>
+          <p class="beneficio-card__p">Orientação técnica para a dose ideal em cada aplicação.</p>
+        </div>
+
+        <div class="beneficio-card">
+          <div class="beneficio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 14v-2a9 9 0 0 1 18 0v2"/>
+              <path d="M21 14a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2v2Z"/>
+              <path d="M3 14a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2v2Z"/>
+              <path d="M18 16v1a4 4 0 0 1-4 4h-1"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-card__h">Suporte especializado</h3>
+          <p class="beneficio-card__p">Acompanhamento técnico e orientação na aplicação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAUDO TÉCNICO -->
+  <section class="laudo" id="qualidade">
+    <div class="wrap">
+      <div class="laudo__layout">
+        <div class="laudo__copy">
+          <div class="laudo__eyebrow">Qualidade comprovada</div>
+          <h2 class="laudo__title">Laudo técnico.</h2>
+          <p class="laudo__p">Ensaios realizados por laboratório credenciado NSF Brasil, com base na ABNT NBR 15.784:2023 e conformidade com a Portaria GM/MS 888/2021.</p>
+          <ul class="laudo__checks">
+            <li>
+              <span class="laudo__check-ico">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+              </span>
+              NSF Brasil
+            </li>
+            <li>
+              <span class="laudo__check-ico">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+              </span>
+              ABNT NBR 15.784:2023
+            </li>
+            <li>
+              <span class="laudo__check-ico">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+              </span>
+              Portaria GM/MS 888/2021
+            </li>
+          </ul>
+        </div>
+
+        <div class="laudo__visual">
+          <img src="../assets/relatorio-nsf.jpg" alt="Relatório de Ensaios NSF Brasil" />
+        </div>
+
+        <div class="laudo__card">
+          <div class="laudo__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="16" y2="17"/>
+            </svg>
+          </div>
+          <h3>Dosagem conforme projeto</h3>
+          <p>A dose ideal é definida de acordo com as características da água e os objetivos de tratamento de cada operação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS: ZERA EM OPERACAO -->
+  <section class="videos" id="videos">
+    <div class="wrap">
+      <div class="videos__layout">
+        <div class="videos__copy">
+          <div class="videos__eyebrow">Veja o Zera em operação</div>
+          <h2 class="videos__title">Aplicações reais no dia a dia.</h2>
+          <p class="videos__p">Acompanhe vídeos de aplicações em ETA, ETE e água de processo.</p>
+          <a href="#" class="videos__cta">
+            Assistir mais vídeos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="videos__grid">
+          <a class="video-card" href="#" aria-label="Assistir: Aplicação em ETA">
+            <div class="video-card__play" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="video-card__title">Aplicação em ETA</div>
+          </a>
+
+          <a class="video-card" href="#" aria-label="Assistir: Tratamento de efluentes em ETE">
+            <div class="video-card__play" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="video-card__title">Tratamento de efluentes em ETE</div>
+          </a>
+
+          <a class="video-card" href="#" aria-label="Assistir: Controle de qualidade da água de processo">
+            <div class="video-card__play" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="video-card__title">Controle de qualidade da água de processo</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPRESAS QUE CONFIAM -->
+  <section class="confianca" id="depoimentos">
+    <div class="wrap">
+      <div class="confianca__layout">
+        <div>
+          <div class="confianca__eyebrow">Empresas que confiam na Zera</div>
+          <h2 class="confianca__title">Resultados em diferentes segmentos.</h2>
+          <p class="confianca__p">Soluções aplicadas em indústrias, estações de tratamento, frigoríficos, agroindústrias, hotéis e empresas de saneamento.</p>
+        </div>
+        <div class="logos">
+          <div class="logo-slot"><span>Sua marca aqui</span></div>
+          <div class="logo-slot"><span>Sua marca aqui</span></div>
+          <div class="logo-slot"><span>Sua marca aqui</span></div>
+          <div class="logo-slot"><span>Sua marca aqui</span></div>
+          <div class="logo-slot"><span>Sua marca aqui</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVO -->
+  <section class="comparativo">
+    <div class="wrap">
+      <div class="comparativo__layout">
+        <div>
+          <div class="comparativo__eyebrow">Comparativo</div>
+          <h2 class="comparativo__title">Mais eficiência com menos complexidade.</h2>
+          <p class="comparativo__p">Uma alternativa prática em relação ao uso de geradores e múltiplos produtos químicos.</p>
+        </div>
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th class="is-zera">ZERA <small>(Produto pronto)</small></th>
+              <th>Gerador</th>
+              <th>Múltiplos químicos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pronto para uso</td>
+              <td><span class="ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span></td>
+              <td><span class="no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+              <td><span class="no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>Menos etapas operacionais</td>
+              <td><span class="ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span></td>
+              <td><span class="no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+              <td><span class="no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>Necessita de equipamentos</td>
+              <td><span class="no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+              <td><span class="ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span></td>
+              <td><span class="dash">—</span></td>
+            </tr>
+            <tr>
+              <td>Dosagem por projeto</td>
+              <td><span class="ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span></td>
+              <td><span class="dash">—</span></td>
+              <td><span class="dash">—</span></td>
+            </tr>
+            <tr>
+              <td>Suporte técnico especializado</td>
+              <td><span class="ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span></td>
+              <td><span class="dash">—</span></td>
+              <td><span class="dash">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="duvidas">
+    <div class="wrap">
+      <div class="faq__layout">
+        <div>
+          <div class="faq__eyebrow">Dúvidas frequentes</div>
+          <h2 class="faq__title">Perguntas frequentes.</h2>
+          <p class="faq__p">Tire as principais dúvidas sobre o uso do ZERA em sua operação.</p>
+        </div>
+        <div class="faq__list">
+          <details class="faq-item">
+            <summary>O ZERA é indicado para quais tipos de operação?</summary>
+            <div class="faq-item__body">O ZERA é indicado para ETA, ETE, água de processo, torres de resfriamento, reservatórios e aplicações que exigem controle de ferro, manganês, cor, odor e desinfecção, com ou sem redução de DBO/DQO.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Como é definida a dosagem?</summary>
+            <div class="faq-item__body">A dosagem é definida pela equipe técnica caso a caso, com base nas características da sua água e nos objetivos do tratamento. Não existe uma receita única: cada operação recebe orientação específica.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Precisa de gerador para usar o produto?</summary>
+            <div class="faq-item__body">Não. O ZERA é um dióxido de cloro estabilizado já pronto para uso, nas embalagens de 1 L, 5 L, 20 L, 50 L e IBC de 1000 L. Também existe a opção Kit A+B, em que 1 L de kit rende 20 L de solução pronta.</div>
+          </details>
+          <details class="faq-item">
+            <summary>O produto possui laudo técnico?</summary>
+            <div class="faq-item__body">Sim. Os ensaios são realizados por laboratório credenciado NSF Brasil, com base na ABNT NBR 15.784:2023 e em conformidade com a Portaria GM/MS 888/2021.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Quais são as formas de fornecimento?</summary>
+            <div class="faq-item__body">Produto pronto nas embalagens de 1 L, 5 L, 20 L, 50 L e IBC 1000 L; ou Kit A+B, onde 1 litro de kit resulta em 20 litros de solução pronta conforme orientação técnica.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Vocês fazem suporte técnico?</summary>
+            <div class="faq-item__body">Sim. A equipe técnica da Zera acompanha a aplicação, orienta a dosagem para cada projeto e dá suporte sempre que a operação precisar ajustar o tratamento.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + FORM -->
+  <section class="cta-form">
+    <img class="cta-form__bg" src="../assets/hero-corporativa.png" alt="" aria-hidden="true" />
+    <div class="cta-form__overlay" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="cta-form__layout">
+        <div>
+          <div class="cta-form__eyebrow">Zera | Tratamento de água e efluentes</div>
+          <h2 class="cta-form__title">
+            Sua operação pode ser mais simples.
+            <span class="yellow">Fale com um técnico.</span>
+          </h2>
+          <p class="cta-form__p">Nossa equipe vai entender sua necessidade e indicar a melhor solução para o seu projeto.</p>
+        </div>
+
+        <form class="form-card" method="post" action="#" onsubmit="event.preventDefault(); alert('Pedido enviado — a Zera entra em contato em breve.');">
+          <h3 class="form-card__h">Solicite uma avaliação técnica</h3>
+          <div class="form-card__layout">
+            <div class="form-card__fields">
+              <input type="text" name="nome" placeholder="Nome completo*" required />
+              <input type="text" name="empresa" placeholder="Empresa*" required />
+              <input type="tel" name="whatsapp" placeholder="WhatsApp*" required />
+              <input type="text" name="cidade_uf" placeholder="Cidade/UF*" required />
+            </div>
+            <div class="form-card__group">
+              <div class="form-card__group-label">Qual é o seu segmento?*</div>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="industria_eta_ete" required /> Indústria com ETA/ETE</label>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="saneamento" /> Empresa de tratamento (saneamento)</label>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="hotel_condominio" /> Hotel ou condomínio</label>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="agua_processo" /> Água de processo</label>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="efluentes" /> Efluentes</label>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="odor" /> Controle de odor</label>
+              <label class="form-card__radio"><input type="radio" name="segmento" value="outros" /> Outros</label>
+            </div>
+          </div>
+          <button type="submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.56-1.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a9.94 9.94 0 0 1-5.08-1.38l-.36-.22-3 .79.8-2.93-.23-.37A10 10 0 1 1 12 21.48Zm5.47-7.34c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.17.2-.35.22-.65.07a8.2 8.2 0 0 1-2.42-1.5 9.05 9.05 0 0 1-1.68-2.08c-.17-.3 0-.45.13-.6.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57a1.1 1.1 0 0 0-.8.37 3.34 3.34 0 0 0-1.04 2.48c0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63a4.1 4.1 0 0 0 1.87.12c.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+            Falar com um especialista
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="../assets/zera-logo.png" alt="ZERA" />
+        </div>
+        <nav class="footer__nav" aria-label="Rodapé">
+          <a href="#solucoes">Soluções</a>
+          <a href="#aplicacoes">Aplicações</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#qualidade">Qualidade</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+        <div class="footer__legal">
+          © 2024 ZERA Brasil. Todos os direitos reservados.<br />
+          <a href="#">Política de privacidade</a> &nbsp;|&nbsp; <a href="#">Termos de uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
