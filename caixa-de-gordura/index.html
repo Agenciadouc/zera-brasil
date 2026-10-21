@@ -34,6 +34,16 @@
   <link rel="preload" as="image" href="../assets/hero-b2c.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
+  <!-- Google Analytics 4 (B2C — G-CEMS7YMP0S) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEMS7YMP0S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CEMS7YMP0S');
+  </script>
+
   <!-- Meta Pixel Code (ZERA — ID 3555271114626005) -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -952,7 +962,7 @@
         <a href="#negocio" class="nav__link">Para seu negócio</a>
         <a href="#duvidas" class="nav__link">Dúvidas</a>
       </nav>
-      <a href="#comprar" class="nav__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');">
+      <a href="#comprar" class="nav__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');if(window.gtag)gtag('event','begin_checkout',{currency:'BRL'});">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="9" cy="21" r="1"/>
           <circle cx="20" cy="21" r="1"/>
@@ -1161,7 +1171,7 @@
             <h3 class="pack__size">1 litro</h3>
             <p class="pack__p">Uso doméstico e pequenas caixas.</p>
             <div class="pack__price">R$ 57,90</div>
-            <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');">Comprar agora</a>
+            <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');if(window.gtag)gtag('event','begin_checkout',{currency:'BRL'});">Comprar agora</a>
           </div>
 
           <div class="pack" data-size="5">
@@ -1171,7 +1181,7 @@
             <h3 class="pack__size">5 litros</h3>
             <p class="pack__p">Casas maiores, pequenos comércios e condomínios.</p>
             <div class="pack__price">R$ 179,90</div>
-            <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');">Comprar agora</a>
+            <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');if(window.gtag)gtag('event','begin_checkout',{currency:'BRL'});">Comprar agora</a>
           </div>
 
           <div class="pack" data-size="20">
@@ -1181,7 +1191,7 @@
             <h3 class="pack__size">20 litros</h3>
             <p class="pack__p">Restaurantes, hotéis e cozinhas industriais.</p>
             <div class="pack__price">R$ 589,90</div>
-            <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');">Comprar agora</a>
+            <a href="#" class="pack__cta" onclick="if(window.fbq)fbq('track','InitiateCheckout');if(window.gtag)gtag('event','begin_checkout',{currency:'BRL'});">Comprar agora</a>
           </div>
         </div>
 
@@ -1366,7 +1376,7 @@
           <p class="cta-final__p">Escolha o tamanho ideal, compre de forma simples e receba em todo o Brasil.</p>
         </div>
         <div class="cta-final__right">
-          <a href="#comprar" class="cta-final__btn" onclick="if(window.fbq)fbq('track','InitiateCheckout');">
+          <a href="#comprar" class="cta-final__btn" onclick="if(window.fbq)fbq('track','InitiateCheckout');if(window.gtag)gtag('event','begin_checkout',{currency:'BRL'});">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="9" cy="21" r="1"/>
               <circle cx="20" cy="21" r="1"/>
