@@ -28,14 +28,25 @@ zera-lp/
 
 ## Deploy na VPS Zera (Hostinger)
 
-**Setup inicial** (uma vez):
+Repositorio oficial: `Agenciadouc/zera-brasil` (GitHub da Dros). O antigo `soaresjoaoluiz1/zera` nao e mais usado.
+
+**Trocar o servidor pro repo da Dros** (uma vez, se o servidor ainda aponta pro antigo):
+
+```bash
+ssh -p 65002 u133586817@45.132.157.150
+cd ~/zera-lps
+git remote set-url origin https://github.com/Agenciadouc/zera-brasil.git
+git fetch origin && git reset --hard origin/main
+```
+
+**Setup inicial** (uma vez, servidor do zero):
 
 ```bash
 ssh -p 65002 u133586817@45.132.157.150
 
 # 1) Clona o repo FORA do webroot (home do usuario)
 cd ~
-git clone https://github.com/soaresjoaoluiz1/zera.git zera-lps
+git clone https://github.com/Agenciadouc/zera-brasil.git zera-lps
 
 # 2) Cria symlinks dentro do public_html apontando pras subpastas do repo
 cd ~/domains/zerabrasil.com.br/public_html/

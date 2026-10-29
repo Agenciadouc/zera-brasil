@@ -465,12 +465,12 @@
     .pack:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(11,18,33,0.08); }
     .pack__img {
       display: grid; place-items: end center;
+      grid-template: 100% / 100%; /* deixa a img respeitar a altura da caixa */
       margin-bottom: 14px;
     }
     .pack__img img {
-      max-width: 100%;
+      width: 100%;
       height: 100%;
-      width: auto;
       object-fit: contain;
       object-position: bottom;
     }
@@ -1255,7 +1255,7 @@
         <div class="pack-grid">
           <div class="pack" data-size="1">
             <div class="pack__img">
-              <img src="../assets/produto-1l.jpg" alt="Zera Caixa de Gordura 1 litro" loading="lazy" decoding="async" />
+              <img src="../assets/cg-produto-1l.webp" alt="Zera Caixa de Gordura 1 litro" loading="lazy" decoding="async" />
             </div>
             <h3 class="pack__size">1 litro</h3>
             <p class="pack__p">Uso doméstico e pequenas caixas.</p>
@@ -1274,7 +1274,7 @@
 
           <div class="pack" data-size="5">
             <div class="pack__img">
-              <img src="../assets/produto-5l.jpg" alt="Zera Caixa de Gordura 5 litros" loading="lazy" decoding="async" />
+              <img src="../assets/cg-produto-5l.webp" alt="Zera Caixa de Gordura 5 litros" loading="lazy" decoding="async" />
             </div>
             <h3 class="pack__size">5 litros</h3>
             <p class="pack__p">Casas maiores, pequenos comércios e condomínios.</p>
@@ -1293,7 +1293,7 @@
 
           <div class="pack" data-size="20">
             <div class="pack__img">
-              <img src="../assets/produto-20l.jpg" alt="Zera Caixa de Gordura 20 litros" loading="lazy" decoding="async" />
+              <img src="../assets/cg-produto-20l.webp" alt="Zera Caixa de Gordura 20 litros" loading="lazy" decoding="async" />
             </div>
             <h3 class="pack__size">20 litros</h3>
             <p class="pack__p">Restaurantes, hotéis e cozinhas industriais.</p>
