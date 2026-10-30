@@ -657,7 +657,7 @@
     }
     .logos {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       list-style: none;
       margin: 0; padding: 0;
@@ -1112,7 +1112,7 @@
     /* ───── SOLUCAO ZERA (cinza claro) ───── */
     .solucao-zera { background: var(--bg-soft); padding: 96px 0; }
     .solucao-zera__layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-    .solucao-zera__frame { border-radius: 16px; overflow: hidden; background: #0B1A3D; box-shadow: 0 20px 45px rgba(11,18,33,0.12); }
+    .solucao-zera__frame { border-radius: 16px; overflow: hidden; background: transparent; }
     .solucao-zera__frame img { width: 100%; height: auto; display: block; }
     .solucao-zera__h { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink-900); margin: 0 0 12px; }
     .solucao-zera__p { font-size: 15px; line-height: 1.6; color: var(--ink-500); margin: 0 0 22px; }
@@ -1171,7 +1171,7 @@
     .fornecimento__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
     .forn-card { min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
     .forn-card p { margin-bottom: 20px; }
-    .forn-card__pic { margin-top: auto; background: #131B2F; border-radius: 12px; padding: 20px 14px; display: grid; place-items: center; height: 220px; }
+    .forn-card__pic { margin-top: auto; background: var(--bg-soft); border-radius: 12px; padding: 20px 14px; display: grid; place-items: center; height: 220px; }
     .forn-card__hint { display: none; margin-top: auto; margin-bottom: 8px; font-size: 12px; color: var(--ink-500); }
     .forn-card__pic img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
 
@@ -1323,7 +1323,7 @@
       .videos__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
       .confianca { padding: 64px 0; }
       .confianca__layout { grid-template-columns: 1fr; gap: 36px; }
-      .logos { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .logos { grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .comparativo { padding: 64px 0; }
       .comparativo__head { margin-bottom: 28px; }
       .cmp-table { font-size: 13px; }
@@ -1495,7 +1495,7 @@
           <span class="blue">imprevisível.</span>
         </h1>
         <p class="hero__sub">
-          Odor, biofilme, consumo sem critério e parâmetros instáveis geram esforço operacional. Conheça o dióxido de cloro estabilizado ZERA e avalie onde ele pode contribuir no seu processo.
+          Ferro, manganês, carga microbiológica, odor, biofilme, consumo sem critério e parâmetros instáveis geram esforço operacional. Conheça o dióxido de cloro estabilizado ZERA e avalie onde ele pode contribuir no seu processo.
         </p>
         <ul class="hero__bullets">
           <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span>Avaliação técnica aplicada à sua operação</li>
@@ -1581,7 +1581,7 @@
       </div>
       <div class="solucao-zera__layout">
         <div class="solucao-zera__frame">
-          <img src="../assets/linha-zera-ibc-v2.webp" alt="Galão de 20 L e IBC de 1.000 L de ZERA dióxido de cloro estabilizado" loading="lazy" decoding="async" width="1200" height="1003" />
+          <img src="../assets/linha-zera-ibc-v3.webp" alt="Galão de 20 L e IBC de 1.000 L de ZERA dióxido de cloro estabilizado" loading="lazy" decoding="async" width="1200" height="1003" />
         </div>
         <div>
           <h3 class="solucao-zera__h">Não basta escolher o produto. É preciso acertar a aplicação.</h3>
@@ -1668,7 +1668,7 @@
 
         <div class="aplicacao">
           <div class="aplicacao__img">
-            <img src="../assets/aplicacao-ete.jpg" alt="Tanque de aeração em estação de tratamento de efluentes, visto de cima" loading="lazy" decoding="async" width="640" height="640" />
+            <img src="../assets/aplicacao-ete-v2.jpg" alt="Tanques circulares de uma estação de tratamento, vistos do alto" loading="lazy" decoding="async" width="640" height="640" />
           </div>
           <h3 class="aplicacao__h">ETE</h3>
           <p class="aplicacao__p">Tratamento de efluentes industriais e sanitários.</p>
@@ -1754,7 +1754,7 @@
         </div>
         <div class="ponte__rows">
           <div class="ponte__row">
-            <div class="ponte__bad"><span class="ponte__ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><div><small>Quando a decisão é só por preço</small>Comparação limitada ao valor de cada embalagem.</div></div>
+            <div class="ponte__bad"><span class="ponte__ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><div><small>Quando a decisão é só por preço</small>Comparação limitada com produto comum (cloro, hipoclorito), só pelo valor de cada embalagem.</div></div>
             <div class="ponte__good"><span class="ponte__ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg></span><div><small>Na avaliação por projeto</small>Comparação considerando dosagem, consumo e volume tratado.</div></div>
           </div>
           <div class="ponte__row">
@@ -1802,14 +1802,14 @@
           <h3>Dióxido de cloro estabilizado</h3>
           <p>Embalagens de 1 L, 5 L, 20 L, 50 L e IBC de 1.000 L.</p>
           <span class="forn-card__hint" aria-hidden="true">Deslize para ver todas as embalagens →</span>
-          <div class="forn-card__pic"><img src="../assets/embalagens-pronto-v2.webp" alt="Embalagens ZERA pronto para uso: 1 L, 5 L, 20 L, 50 L e IBC de 1.000 L" loading="lazy" decoding="async" width="1895" height="726" /></div>
+          <div class="forn-card__pic"><img src="../assets/embalagens-pronto-v3.webp" alt="Embalagens ZERA pronto para uso: 1 L, 5 L, 20 L, 50 L e IBC de 1.000 L" loading="lazy" decoding="async" width="1850" height="726" /></div>
         </article>
         <article class="forn-card">
           <div class="forn-card__tag">02 / Preparo no local</div>
           <h3>Kit A+B</h3>
           <p>Cada litro de kit rende 20 L de produto pronto, seguindo o procedimento definido para o projeto.</p>
           <span class="forn-card__hint" aria-hidden="true">Deslize para ver todas as embalagens →</span>
-          <div class="forn-card__pic"><img src="../assets/embalagens-kit-v2.webp" alt="Embalagens do Kit A+B ZERA, de 1 L a IBC de 1.000 L" loading="lazy" decoding="async" width="2916" height="726" /></div>
+          <div class="forn-card__pic"><img src="../assets/embalagens-kit-v3.webp" alt="Embalagens do Kit A+B ZERA, de 1 L a IBC de 1.000 L" loading="lazy" decoding="async" width="2986" height="726" /></div>
         </article>
       </div>
       <div class="sec-cta sec-cta--center"><a href="#contato" class="btn btn--primary">Solicitar análise técnica <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
@@ -1834,7 +1834,7 @@
         <article class="cenario">
           <div class="cenario__tag">Cenário 02 / ETE</div>
           <h3>Odor e características do efluente exigem atenção.</h3>
-          <p>Em ETE, a aplicação pode ser avaliada para controle de odor, cor e parâmetros como DBO, DQO e amônia.</p>
+          <p>Em ETE, a aplicação pode ser avaliada para controle de carga orgânica, odor, cor e parâmetros como DBO, DQO e amônia.</p>
           <p class="cenario__ask"><strong>A avaliação começa por:</strong> origem do efluente, carga, vazão e objetivo do tratamento.</p>
         </article>
         <article class="cenario">
@@ -2050,6 +2050,8 @@
           <li class="logo-slot logo-slot--img"><img src="../assets/clientes/smartfluid.png" alt="Smart Fluid — piscinas e tratamento de água" loading="lazy" decoding="async" width="480" height="289" /></li>
           <li class="logo-slot logo-slot--img"><img src="../assets/clientes/geranium.png" alt="Hotel Geranium" loading="lazy" decoding="async" width="400" height="268" /></li>
           <li class="logo-slot logo-slot--img logo-slot--nome"><span>Condomínio<strong>Porto Village</strong><small>Balneário Camboriú</small></span></li>
+          <li class="logo-slot logo-slot--img logo-slot--nome"><span>Resort<strong>Canabrava</strong><small>Ilhéus, BA</small></span></li>
+          <li class="logo-slot logo-slot--img logo-slot--nome"><span>Hotel<strong>Fazenda Parque</strong><small>Gaspar, SC</small></span></li>
         </ul>
       </div>
     </div>
