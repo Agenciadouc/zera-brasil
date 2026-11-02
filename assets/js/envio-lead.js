@@ -59,6 +59,29 @@
     return linhas.join('\n');
   }
 
+  // Correspondencia avancada da Meta: a pagina de obrigado le isto e passa ao pixel,
+  // que embaralha (SHA-256) antes de enviar. Fica so nesta aba (sessionStorage).
+  function semAcento(s) {
+    return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+  function guardarParaPixel(c) {
+    try {
+      var partes = String(c.nome || '').trim().split(/\s+/);
+      var cidade = String(c.cidade || '').split(/[\/\-,]/);
+      var uf = semAcento(cidade[1]).replace(/[^a-z]/g, '');
+      var d = {
+        ph: String(c.whatsapp || '').replace(/\D/g, ''),
+        fn: semAcento(partes[0]).replace(/[^a-z]/g, ''),
+        ln: partes.length > 1 ? semAcento(partes[partes.length - 1]).replace(/[^a-z]/g, '') : '',
+        ct: semAcento(cidade[0]).replace(/[^a-z]/g, ''),
+        st: uf.length === 2 ? uf : '',
+        country: 'br'
+      };
+      Object.keys(d).forEach(function (k) { if (!d[k]) delete d[k]; });
+      sessionStorage.setItem('zera_lead_pixel', JSON.stringify(d));
+    } catch (e) { /* sem sessionStorage: segue sem correspondencia avancada */ }
+  }
+
   function postar(url, corpo, tipo) {
     return fetch(url, {
       method: 'POST',
@@ -82,6 +105,7 @@
         corpo.source_detail = [corpo.utm_source, corpo.utm_medium, corpo.utm_campaign, corpo.utm_content].filter(Boolean).join(' > ');
       }
       if (!corpo.notes) corpo.notes = observacoes(corpo);
+      guardarParaPixel(corpo);
       if (!PLANILHA) return direto(corpo);
       // text/plain evita o preflight de CORS do Apps Script
       return postar(PLANILHA, corpo, 'text/plain;charset=utf-8')
