@@ -20,7 +20,7 @@ const COLUNAS = [
   'Segmento / Tipo de local', 'Problema / Desafio', 'Source', 'Source detail', 'Tags',
   'UTM source', 'UTM medium', 'UTM campaign', 'UTM content', 'UTM term',
   'fbclid', 'gclid', 'fbp', 'fbc', 'Referrer', 'Landing page', 'Device', 'Screen',
-  'User agent', 'Fill time (ms)', 'CRM sync status', 'CRM sync response',
+  'User agent', 'Fill time (ms)', 'CRM sync status', 'CRM sync response', 'Observacoes',
 ]
 const COL_STATUS = COLUNAS.indexOf('CRM sync status') + 1
 
@@ -35,16 +35,12 @@ function aba_() {
   return sh
 }
 
+// Repassa TUDO que veio do site (Observacoes em "notes", UTMs, fbp/fbc para o evento da Meta).
 function payloadCrm_(d) {
-  return {
-    nome: d.nome || '',
-    whatsapp: d.whatsapp || '',
-    empresa: d.empresa || '',
-    cidade: d.cidade || '',
+  return Object.assign({}, d, {
     source: d.source || d.pagina || 'LP Zera',
-    source_detail: d.source_detail || '',
     tags: d.tags || [],
-  }
+  })
 }
 
 function enviarCrm_(payload) {
@@ -77,6 +73,7 @@ function doPost(e) {
       d.utm_source || '', d.utm_medium || '', d.utm_campaign || '', d.utm_content || '', d.utm_term || '',
       d.fbclid || '', d.gclid || '', d.fbp || '', d.fbc || '', d.referrer || '', d.landing_page || '',
       d.device || '', d.screen || '', d.user_agent || '', d.fill_time_ms || '', 'pendente', '',
+      d.notes || '',
     ])
     linha = sh.getLastRow()
   } catch (err) {
@@ -112,6 +109,9 @@ function reenviarPendentes() {
       nome: r[2], whatsapp: String(r[3]), empresa: r[4], cidade: r[5],
       source: r[8] || r[1], source_detail: r[9],
       tags: String(r[10] || '').split(',').map(function (t) { return t.trim() }).filter(String),
+      utm_source: r[11], utm_medium: r[12], utm_campaign: r[13], utm_content: r[14], utm_term: r[15],
+      fbclid: r[16], gclid: r[17], fbp: r[18], fbc: r[19], user_agent: r[24],
+      notes: r[28] || ['Segmento / tipo de local: ' + r[6], 'Problema / desafio: ' + r[7]].join('\n'),
     })
     sh.getRange(i + 2, COL_STATUS, 1, 2).setValues([[crm.status === 'ok' ? 'ok_reenvio' : crm.status, crm.resposta]])
   })

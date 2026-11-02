@@ -36,6 +36,29 @@
     };
   }
 
+  // Rotulos das Observacoes do lead no CRM. Campo que nao estiver aqui entra com o proprio nome.
+  var ROTULOS = {
+    pagina: 'Página', empresa: 'Empresa / local', cidade: 'Cidade', segmento: 'Segmento / tipo de local',
+    problema: 'Problema / desafio', mensagem: 'Mensagem', email: 'E-mail'
+  };
+  // Campos que o CRM ja grava em lugar proprio (ou sao rastreio tecnico): ficam fora das Observacoes.
+  var FORA = ['nome', 'whatsapp', 'source', 'source_detail', 'tags', 'notes', 'utm_source', 'utm_medium',
+    'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'fbp', 'fbc', 'referrer', 'landing_page',
+    'device', 'screen', 'user_agent', 'fill_time_ms'];
+
+  function observacoes(c) {
+    var linhas = ['Cadastro pelo site em ' + new Date().toLocaleString('pt-BR')];
+    Object.keys(c).forEach(function (k) {
+      var v = c[k];
+      if (FORA.indexOf(k) !== -1 || v == null || String(v).trim() === '') return;
+      linhas.push((ROTULOS[k] || k) + ': ' + String(v).trim());
+    });
+    if (c.utm_campaign) linhas.push('Campanha: ' + c.utm_campaign);
+    if (c.utm_content) linhas.push('Anúncio: ' + c.utm_content);
+    linhas.push('Aparelho: ' + (c.device === 'mobile' ? 'celular' : 'computador'));
+    return linhas.join('\n');
+  }
+
   function postar(url, corpo, tipo) {
     return fetch(url, {
       method: 'POST',
@@ -58,6 +81,7 @@
       if (!corpo.source_detail) {
         corpo.source_detail = [corpo.utm_source, corpo.utm_medium, corpo.utm_campaign, corpo.utm_content].filter(Boolean).join(' > ');
       }
+      if (!corpo.notes) corpo.notes = observacoes(corpo);
       if (!PLANILHA) return direto(corpo);
       // text/plain evita o preflight de CORS do Apps Script
       return postar(PLANILHA, corpo, 'text/plain;charset=utf-8')
