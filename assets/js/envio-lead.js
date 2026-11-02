@@ -4,7 +4,7 @@
  * 2) Se a planilha falhar, manda direto para o CRM.
  * Enquanto PLANILHA estiver vazia, vai direto para o CRM. */
 (function () {
-  var PLANILHA = '';
+  var PLANILHA = 'https://script.google.com/macros/s/AKfycbyyaX_rwgeLJ--QAMnUcmfNe-IU4Tpd0U9HVmYALVnfAbYp6Fs5vDrm3maa_coNiQc-/exec';
   var CRM = 'https://drosagencia.com.br/crm/api/webhooks/sheets/zera-brasil-quimicos-ltda';
   var inicio = Date.now();
   var params = new URLSearchParams(location.search);
